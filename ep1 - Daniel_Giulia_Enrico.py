@@ -1,9 +1,9 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Apr 11 13:23:09 2019
-
-@author: enric
-"""
+# EP 2019-1: A vida no insper
+#
+# Alunos: 
+# - Aluno A: Daniel Minson Pucciariello, danielp6@al.insper.edu.br
+# - aluno B: Enrico Damiani, enricofd@al.insper.edu.br
+# - Aluno C: Giulia Castro, giuliaac@al.insper.edu
 
 print("Bem vindo ao jogo")
 "\n"
