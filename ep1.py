@@ -23,3 +23,5 @@ while modo_jogo == "Difícil" or modo_jogo == "Dificil" or modo_jogo == "difíci
     print ("\n" "Modo Difícil selecionado")
     modo_jogo = input("Você goastaria de tentar o modo Poloni (Impossível até de compreender o que esta acontencendo)? Caso prefira, continue no difícil respondendo não. Responda com Sim ou Não: ")
     break
+
+#teste
