@@ -35,7 +35,15 @@ def carregar_cenarios():
             "titulo": "Caverna da tranquilidade",
             "descricao": "Voce esta na biblioteca",
             "opcoes": {
-                "inicio": "voltar para o saguao de entrada"
+                "inicio": "voltar para o saguao de entrada",
+                "sala secreta": "entrar em uma passagem secreta que encontrou dentro do aquário 33"
+            }
+        },
+        "sala secreta": {
+            "titulo": "...",
+            "descricao": "Para entrar na sala secreta, acerte a senha....",
+            "opcoes": {
+                "biblioteca": "voltar para a biblioteca"
             }
         }
     }
