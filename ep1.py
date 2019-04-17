@@ -106,8 +106,10 @@ def main():
                         t =  0
                         while t < 10:
                             print (f"restam {10 - t} tentativas")
-                            if r != "Disney":
+                            while r != "Disney":
                                 t += 1
+                                r = input("fala ai a senha meu filho: ")
+                            print("você ganhou o direito de se teletranportar, entretanto não erre o local....")
                             y = input ("Para onde você deseja ir? ")
                             if y not in cenarios:
                                 print ("Aquele que não sabe para onde ir merece a morte")
