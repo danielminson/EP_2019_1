@@ -61,6 +61,9 @@ def main():
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
         print(cenario_atual["titulo"])
+        print(len(cenario_atual["titulo"])*"-")
+        print(cenario_atual["descricao"])
+        print()
         # Aluno A: substitua este comentário pelo código para imprimir 
         # o cenário atual.
 
