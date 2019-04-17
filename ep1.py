@@ -75,17 +75,27 @@ def main():
                 print (f"Você pode {opcao} (para essa opção escreva: {e})")
             escolha = input ("O que você quer fazer? ")
             
-            valoraleatorio = random.choice([True, False])
-            if valoraleatorio == True:
-                print('começa  a batalha')
-
+            aparicaodemonstro = random.choice([True, False])
+            ganharpremio = random.choice([True, False])
+            acao = False
+            if aparicaodemonstro == True or ganharpremio == True:
+                acao = True
+            while acao == True:   
+                if aparicaodemonstro == True and ganharpremio == True:
+                    print('começa  a batalha e sim, você ganhou um prêmio')
+                    break
+                elif aparicaodemonstro == True and ganharpremio == False:
+                    print('começa a batalha meu filho')
+                    break
+                elif aparicaodemonstro == False and ganharpremio == True:
+                    print('você ganhou um prêmio')
+                    break
+            if escolha in opcoes:
+                nome_cenario_atual = escolha
             else:
-                if escolha in opcoes:
-                    nome_cenario_atual = escolha
-                else:
-                    #arrumar
-                    print("Sua indecisão foi sua ruína!")
-                    game_over = True
+                #arrumar
+                print("Sua indecisão foi sua ruína!")
+                game_over = True
     print("Você morreu!")
 
 
