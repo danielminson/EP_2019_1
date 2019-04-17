@@ -99,7 +99,27 @@ def main():
                     print('você ganhou um prêmio')
                     break
             if escolha in opcoes:
-                nome_cenario_atual = escolha
+                if escolha == "sala secreta":
+                    x = input ("Você quer tentar a senha da sala ou voltar para a biblioteca enquanto há tempo? (para tentar a senha digite: tentar a senha; para retornar para a biblioteca digite: biblioteca): ")
+                    if x == "tentar a senha":
+                        r = input("fala ai a senha meu filho: ")
+                        t =  0
+                        while t < 10:
+                            print (f"restam {10 - t} tentativas")
+                            if r != "Disney":
+                                t += 1
+                            y = input ("Para onde você deseja ir? ")
+                            if y not in cenarios:
+                                print ("Aquele que não sabe para onde ir merece a morte")
+                                break
+                            else:
+                                nome_cenario_atual = y
+                        game_over = True
+                    else:
+                        print ("Você perdeu sua oportunidade...")
+                        nome_cenario_atual = "biblioteca"
+                else:
+                    nome_cenario_atual = escolha
             else:
                 #arrumar
                 print("Sua indecisão foi sua ruína!")
