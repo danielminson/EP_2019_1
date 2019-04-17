@@ -29,7 +29,7 @@ def carregar_cenarios():
             "descricao": "Voce foi pedir para o professor adiar o EP. "
                          "O professor revelou que é um monstro disfarçado "
                          "e devorou sua alma.",
-            "opcoes": {}
+            "opcoes": {"a"}
         },
         "biblioteca": {
             "titulo": "Caverna da tranquilidade",
@@ -61,18 +61,14 @@ def main():
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
 
-        # Aluno A: substitua este comentário pelo código para imprimir 
-        # o cenário atual.
+       print (cenario_atual)
 
         opcoes = cenario_atual['opcoes']
         if len(opcoes) == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
             game_over = True
         else:
-
-            # Aluno B: substitua este comentário e a linha abaixo pelo código
-            # para pedir a escolha do usuário.
-            escolha = ""
+            escolha = input ("O que você quer fazer? ")
 
             if escolha in opcoes:
                 nome_cenario_atual = escolha
