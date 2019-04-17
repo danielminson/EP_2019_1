@@ -12,16 +12,16 @@ def carregar_cenarios():
             "titulo": "Saguao do perigo",
             "descricao": "Voce esta no saguao de entrada do insper",
             "opcoes": {
-                "andar professor": "Tomar o elevador para o andar do professor",
-                "biblioteca": "Ir para a biblioteca"
+                "andar professor": "tomar o elevador para o andar do professor",
+                "biblioteca": "ir para a biblioteca"
             }
         },
         "andar professor": {
             "titulo": "Andar do desespero",
             "descricao": "Voce chegou ao andar da sala do seu professor",
             "opcoes": {
-                "inicio": "Tomar o elevador para o saguao de entrada",
-                "professor": "Falar com o professor"
+                "inicio": "tomar o elevador para o saguao de entrada",
+                "professor": "falar com o professor"
             }
         },
         "professor": {
@@ -29,13 +29,13 @@ def carregar_cenarios():
             "descricao": "Voce foi pedir para o professor adiar o EP. "
                          "O professor revelou que é um monstro disfarçado "
                          "e devorou sua alma.",
-            "opcoes": {"a"}
+            "opcoes": {}
         },
         "biblioteca": {
             "titulo": "Caverna da tranquilidade",
             "descricao": "Voce esta na biblioteca",
             "opcoes": {
-                "inicio": "Voltar para o saguao de entrada"
+                "inicio": "voltar para o saguao de entrada"
             }
         }
     }
@@ -60,14 +60,19 @@ def main():
     game_over = False
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
-
-       print (cenario_atual)
-
+        print(cenario_atual["titulo"])
+        print(len(cenario_atual["titulo"])*"-")
+        print(cenario_atual["descricao"])
+        print()
+       
         opcoes = cenario_atual['opcoes']
         if len(opcoes) == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
             game_over = True
         else:
+            for e in opcoes:
+                opcao = opcoes[e]
+                print (f"Você pode {opcao} (para essa opção escreva: {e})")
             escolha = input ("O que você quer fazer? ")
 
             if escolha in opcoes:
