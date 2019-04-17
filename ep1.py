@@ -5,7 +5,7 @@
 # - aluno B: Enrico Damiani, enricofd@al.insper.edu.br
 # - Aluno C: Giulia Castro, giuliaac@al.insper.edu.br
 
-
+import random
 def carregar_cenarios():
     cenarios = {
         "inicio": {
@@ -74,13 +74,18 @@ def main():
                 opcao = opcoes[e]
                 print (f"Você pode {opcao} (para essa opção escreva: {e})")
             escolha = input ("O que você quer fazer? ")
+            
+            valoraleatorio = random.choice([True, False])
+            if valoraleatorio == True:
+                print('começa  a batalha')
 
-            if escolha in opcoes:
-                nome_cenario_atual = escolha
             else:
-                print("Sua indecisão foi sua ruína!")
-                game_over = True
-
+                if escolha in opcoes:
+                    nome_cenario_atual = escolha
+                else:
+                    #arrumar
+                    print("Sua indecisão foi sua ruína!")
+                    game_over = True
     print("Você morreu!")
 
 
