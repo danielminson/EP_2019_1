@@ -72,7 +72,7 @@ def main():
         print(len(cenario_atual["titulo"])*"-")
         print(cenario_atual["descricao"])
         print()
-       
+        #hp
         opcoes = cenario_atual['opcoes']
         if len(opcoes) == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
@@ -90,6 +90,10 @@ def main():
             while acao == True:   
                 if aparicaodemonstro == True and ganharpremio == True:
                     print('começa  a batalha e sim, você ganhou um prêmio')
+                    #vida do monstro - talvez fazer uma funcao para as batalhas
+                    #premios - basicamente alterar hp do personagem, no inicio, mas depois queremos implementar
+                    #adicionar itens no inventário, que ainda PRECISA SER FEITO.
+                    # OBS: os premios que voce ganhar aqui, voce nao podera pegar no cenário
                     break
                 elif aparicaodemonstro == True and ganharpremio == False:
                     print('começa a batalha meu filho')
