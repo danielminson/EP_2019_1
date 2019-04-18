@@ -104,10 +104,11 @@ def main():
                     if x == "tentar a senha":
                         r = input("fala ai a senha meu filho: ")
                         t =  0
+                       # arrumar esse pedaço - para testar ir para a sala secreta e errar a senha...
                         while t < 10:
-                            print (f"restam {10 - t} tentativas")
                             while r != "Disney":
                                 t += 1
+                                print (f"restam {10 - t} tentativas")
                                 r = input("fala ai a senha meu filho: ")
                             print("você ganhou o direito de se teletranportar, entretanto não erre o local....")
                             y = input ("Para onde você deseja ir? ")
@@ -117,6 +118,7 @@ def main():
                             else:
                                 nome_cenario_atual = y
                         game_over = True
+                    #até aqui
                     else:
                         print ("Você perdeu sua oportunidade...")
                         nome_cenario_atual = "biblioteca"
