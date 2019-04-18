@@ -5,38 +5,22 @@
 # - aluno B: Enrico Damiani, enricofd@al.insper.edu.br
 # - Aluno C: Giulia Castro, giuliaac@al.insper.edu.br
 
-import random
- 
-def carregarmonstros():
-    monstros = {
-            "cristofer":{
-                    "descricao": "esse monstro possui o poder de te hipnotizar",
-                    "vida":"500", 
-                    "demage":"100",
-                    "opcoes": {
-                            "fugir":"correr para as montanhas",
-                            "enfrentar":"mostre para ele quem é que manda"
-                            }
-                        },
-            "alanmo":{
-                    "descricao": "esse monstro repete incessantemente que voce precisa prestar mais atenção na aula",
-                    "vida":"750", 
-                    "demage":"250",
-                    "opcoes": {
-                            "fugir":"correr para as montanhas",
-                            "enfrentar":"mostre para ele quem é que manda"
-                            }
-                    }
-            }
-    return monstros
 
-import json 
+import random
+import json
+ 
+with open('Monstros.json', 'r', encoding="utf8") as file:
+    monstro=json.load(file)
+    
+def carregarmonstros():
+    monstros=monstro
+    return monstros
+ 
 with open('Cenario.json', 'r', encoding="utf8") as f:
     cenario=json.load(f)
     
 def carregar_cenarios():
     cenarios = cenario
-#        "
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
