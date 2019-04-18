@@ -5,7 +5,29 @@
 # - aluno B: Enrico Damiani, enricofd@al.insper.edu.br
 # - Aluno C: Giulia Castro, giuliaac@al.insper.edu.br
 import random
-from colorama import Fore, Back, Style, init
+ 
+def carregarmonstros():
+    monstros = {
+            "cristofer":{
+                    "descricao": "esse monstro possui o poder de te hipnotizar",
+                    "vida":"500", 
+                    "demage":"100",
+                    "opcoes": {
+                            "fugir":"correr para as montanhas",
+                            "enfrentar":"mostre para ele quem é que manda"
+                            }
+                        },
+            "alanmo":{
+                    "descricao": "esse monstro repete incessantemente que voce precisa prestar mais atenção na aula",
+                    "vida":"750", 
+                    "demage":"250",
+                    "opcoes": {
+                            "fugir":"correr para as montanhas",
+                            "enfrentar":"mostre para ele quem é que manda"
+                            }
+                    }
+            }
+    return monstros
 def carregar_cenarios():
     cenarios = {
         "inicio": {
