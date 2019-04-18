@@ -4,6 +4,7 @@
 # - Aluno A: Daniel Minson Pucciariello, danielp6@al.insper.edu.br
 # - aluno B: Enrico Damiani, enricofd@al.insper.edu.br
 # - Aluno C: Giulia Castro, giuliaac@al.insper.edu.br
+
 import random
  
 def carregarmonstros():
@@ -28,52 +29,20 @@ def carregarmonstros():
                     }
             }
     return monstros
+
+import json 
+with open('Cenario.json', 'r', encoding="utf8") as f:
+    cenario=json.load(f)
+    
 def carregar_cenarios():
-    cenarios = {
-        "inicio": {
-            "titulo": "Saguao do perigo",
-            "descricao": "Voce esta no saguao de entrada do insper",
-            "opcoes": {
-                "andar professor": "tomar o elevador para o andar do professor",
-                "biblioteca": "ir para a biblioteca"
-            }
-        },
-        "andar professor": {
-            "titulo": "Andar do desespero",
-            "descricao": "Voce chegou ao andar da sala do seu professor",
-            "opcoes": {
-                "inicio": "tomar o elevador para o saguao de entrada",
-                "professor": "falar com o professor"
-            }
-        },
-        "professor": {
-            "titulo": "O monstro do Python",
-            "descricao": "Voce foi pedir para o professor adiar o EP. "
-                         "O professor revelou que é um monstro disfarçado "
-                         "e devorou sua alma.",
-            "opcoes": {}
-        },
-        "biblioteca": {
-            "titulo": "Caverna da tranquilidade",
-            "descricao": "Voce esta na biblioteca",
-            "opcoes": {
-                "inicio": "voltar para o saguao de entrada",
-                "sala secreta": "entrar em uma passagem secreta que encontrou dentro do aquário 33"
-            }
-        },
-        "sala secreta": {
-            "titulo": "...",
-            "descricao": "Para entrar na sala secreta, acerte a senha....",
-            "opcoes": {
-                "biblioteca": "voltar para a biblioteca"
-            }
-        }
-    }
+    cenarios = cenario
+#        "
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
 
 def main():
+    nome_cenario_atual = "inicio"
     print("Na hora do sufoco!")
     print("------------------")
     print()
@@ -86,7 +55,6 @@ def main():
     print()
 
     cenarios, nome_cenario_atual = carregar_cenarios()
-
     game_over = False
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
