@@ -4,8 +4,8 @@
 # - Aluno A: Daniel Minson Pucciariello, danielp6@al.insper.edu.br
 # - aluno B: Enrico Damiani, enricofd@al.insper.edu.br
 # - Aluno C: Giulia Castro, giuliaac@al.insper.edu.br
-
 import random
+from colorama import Fore, Back, Style, init
 def carregar_cenarios():
     cenarios = {
         "inicio": {
@@ -82,7 +82,6 @@ def main():
                 opcao = opcoes[e]
                 print (f"Você pode {opcao} (para essa opção escreva: {e})")
             escolha = input ("O que você quer fazer? ")
-            
             aparicaodemonstro = random.choice([True, False])
             ganharpremio = random.choice([True, False])
             acao = False
@@ -104,21 +103,22 @@ def main():
                     if x == "tentar a senha":
                         r = input("fala ai a senha meu filho: ")
                         t =  0
-                       # arrumar esse pedaço - para testar ir para a sala secreta e errar a senha...
-                        while t < 10:
-                            while r != "Disney":
-                                t += 1
-                                print (f"restam {10 - t} tentativas")
-                                r = input("fala ai a senha meu filho: ")
+                        while r != "Disney" and t <10:
+                           t = t+1
+                           print (f"restam {10 - t} tentativas")
+                           r = input("fala ai a senha meu filho: ")
+                           if t==10:
+                               break
+                        if t==10:
+                            game_over = True
+                        else:
                             print("você ganhou o direito de se teletranportar, entretanto não erre o local....")
                             y = input ("Para onde você deseja ir? ")
                             if y not in cenarios:
                                 print ("Aquele que não sabe para onde ir merece a morte")
-                                break
+                                game_over = True
                             else:
                                 nome_cenario_atual = y
-                        game_over = True
-                    #até aqui
                     else:
                         print ("Você perdeu sua oportunidade...")
                         nome_cenario_atual = "biblioteca"
