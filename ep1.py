@@ -27,6 +27,7 @@ def carregarmonstros():
                             }
                     }
             }
+ #   x=random.randint(1, len(monstros[]))
     return monstros
 def carregar_cenarios():
     cenarios = {
@@ -112,6 +113,7 @@ def main():
             while acao == True:   
                 if aparicaodemonstro == True and ganharpremio == True:
                     print('começa  a batalha e sim, você ganhou um prêmio')
+                    
                     #vida do monstro - talvez fazer uma funcao para as batalhas
                     #premios - basicamente alterar hp do personagem, no inicio, mas depois queremos implementar
                     #adicionar itens no inventário, que ainda PRECISA SER FEITO.
