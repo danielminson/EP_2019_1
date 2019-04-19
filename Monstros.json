@@ -1,17 +1,17 @@
-{
-            "cristofer":{
+﻿{
+            "Pateta":{
                     "descricao": "esse monstro possui o poder de te hipnotizar",
-                    "vida":"500", 
-                    "demage":"100",
+                    "vida":"50", 
+                    "dano":"5",
                     "opcoes": {
                             "fugir":"correr para as montanhas",
                             "enfrentar":"mostre para ele quem é que manda"
                             }
                         },
-            "alanmo":{
+            "Pluto":{
                     "descricao": "esse monstro repete incessantemente que voce precisa prestar mais atenção na aula",
-                    "vida":"750", 
-                    "demage":"250",
+                    "vida":"35", 
+                    "dano":"8",
                     "opcoes": {
                             "fugir":"correr para as montanhas",
                             "enfrentar":"mostre para ele quem é que manda"

@@ -8,12 +8,12 @@
 
 import random
 import json
+hp = 100
  
 with open('Monstros.json', 'r', encoding="utf8") as file:
     monstros=json.load(file)
 def carregarmonstros():
     x = random.randint ( 0, len(monstros)-1)
-    #não entendi esse "range" mas funcionou... 
     listademonstros = []
     for e in monstros:
         listademonstros.append(e)
@@ -27,6 +27,18 @@ def carregar_cenarios():
     cenarios = cenario
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
+
+def combate():
+    monstro = carregarmonstros()
+    vidam = monstros[monstro]["vida"]
+    vidap = hp
+    danom = monstros[monstro]["dano"]
+    print ("Batalha")
+    print (f "No caminho você se deparou com o {monstro}")
+    print (f "Esse monstro possui {vidam} e realiza um ataque de {danom} de dano")
+    print (f "Você pode {monstros[monstro]["opcoes"]["fugir]} ou {monstros[monstro]["opcoes"]["enfrentar"]} (para tentar correr, digite: fugir; para batalhar, digite: enfrentar)")
+    danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com a força do ataque): ") 
+
 
 
 def main():
@@ -48,9 +60,10 @@ def main():
         cenario_atual = cenarios[nome_cenario_atual]
         print(cenario_atual["titulo"])
         print(len(cenario_atual["titulo"])*"-")
+        print (f"Sua vida é de {hp} HP")
+        print(20 * "-")
         print(cenario_atual["descricao"])
         print()
-        #hp
         opcoes = cenario_atual['opcoes']
         if len(opcoes) == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
@@ -75,7 +88,7 @@ def main():
                     # OBS: os premios que voce ganhar aqui, voce nao podera pegar no cenário
                     break
                 elif aparicaodemonstro == True and ganharpremio == False:
-                    print('começa a batalha meu filho')
+                    x = combate()
                     break
                 elif aparicaodemonstro == False and ganharpremio == True:
                     print('você ganhou um prêmio')
