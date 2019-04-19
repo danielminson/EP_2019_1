@@ -10,33 +10,15 @@ import random
 import json
  
 with open('Monstros.json', 'r', encoding="utf8") as file:
-    monstro=json.load(file)
-    
+    monstros=json.load(file)
 def carregarmonstros():
-    monstros = {
-            "cristofer":{
-                    "descricao": "esse monstro possui o poder de te hipnotizar",
-                    "vida":"500", 
-                    "demage":"100",
-                    "opcoes": {
-                            "fugir":"correr para as montanhas",
-                            "enfrentar":"mostre para ele quem é que manda"
-                            }
-                        },
-            "alanmo":{
-                    "descricao": "esse monstro repete incessantemente que voce precisa prestar mais atenção na aula",
-                    "vida":"750", 
-                    "demage":"250",
-                    "opcoes": {
-                            "fugir":"correr para as montanhas",
-                            "enfrentar":"mostre para ele quem é que manda"
-                            }
-                    }
-            }
- #   x=random.randint(1, len(monstros[]))
-    monstros=monstro
-    return monstros
- 
+    x = random.randint ( -1, len(monstros)-1)
+    listademonstros = []
+    for e in monstros:
+        listademonstros.append(e)
+    monstro = listademonstros[x]    
+    return monstro
+print (carregarmonstros()) 
 with open('Cenario.json', 'r', encoding="utf8") as f:
     cenario=json.load(f)
     
