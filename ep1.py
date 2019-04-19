@@ -12,12 +12,13 @@ import json
 with open('Monstros.json', 'r', encoding="utf8") as file:
     monstros=json.load(file)
 def carregarmonstros():
-    x = random.randint ( -1, len(monstros)-1)
+    x = random.randint ( 0, len(monstros)-1)
+    #não entendi esse "range" mas funcionou... 
     listademonstros = []
     for e in monstros:
         listademonstros.append(e)
     monstro = listademonstros[x]    
-    return monstro
+    return listademonstros, x, monstro
 print (carregarmonstros()) 
 with open('Cenario.json', 'r', encoding="utf8") as f:
     cenario=json.load(f)
