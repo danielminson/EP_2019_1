@@ -113,11 +113,40 @@ def combate():
         if a > 5:
             print (30*"-")
             print("Você não conseguiu fugir...")
-            danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
+            #------------------------------------------------------ arrumar:
+            while vidam != 0 and vidap != 0:
+                danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
+                while danopi != "fraco" and danopi != "medio" and danopi != "forte":
+                    print ("responda corretamente")
+                    danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
+                if danopi == "fraco":
+                    p = random.randint(0,100)
+                    if p < 76:
+                        danox = int(danom)
+                        danox = danox - 2
+                        print (f"A vida do monstro é {danom} HP")       
+                        danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
+                elif danopi == "medio":
+                    p = random.randint(0,100)
+                    if p < 51:
+                        danox = int(danom)
+                        danox = danox - 5
+                        print (f"A vida do monstro é {danom} HP")
+                        danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ")                            
+                else:
+                    p = random.randint(0,100)
+                    if p < 26:
+                        danox = int(danom)
+                        danox = danox - 10
+                        print (f"A vida do monstro é {danom} HP")
+                        danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
+        #---------------------------------------------------------------                    
         else:
+            print (30*"-")
             print ("Você conseguiu fugir")
     else:
         danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
+# copiara o que esta entre ------ aqui
 def main():
     nome_cenario_atual = "inicio"
     print("Na hora do sufoco!")
