@@ -7,21 +7,82 @@
 
 
 import random
-import json
+
 hp = 100
- 
-with open('Monstros.json', 'r', encoding="utf8") as file:
-    monstros=json.load(file)
+
+monstros = {
+            "Pateta":{
+                    "descricao": "Esse monstro possui o poder de te hipnotizar",
+                    "vida":"50", 
+                    "dano":"5",
+                    "opcoes": {
+                            "fugir":"tentar correr",
+                            "enfrentar":"mostrar para ele quem é que manda"
+                            }
+                        },
+            "Pluto":{
+                    "descricao": "Esse monstro repete incessantemente que voce precisa prestar mais atenção na aula",
+                    "vida":"35", 
+                    "dano":"8",
+                    "opcoes": {
+                            "fugir":" tentar correr",
+                            "enfrentar":"mostrar para ele quem é que manda"
+                            }
+                    }
+            }
+
+
+    
+    
+    
 def carregarmonstros():
     x = random.randint ( 0, len(monstros)-1)
     listademonstros = []
     for e in monstros:
         listademonstros.append(e)
     monstro = listademonstros[x]    
-    return listademonstros, x, monstro
-print (carregarmonstros()) 
-with open('Cenario.json', 'r', encoding="utf8") as f:
-    cenario=json.load(f)
+    return monstro 
+
+cenario = {
+        "inicio": {
+            "titulo": "Saguao do perigo",
+            "descricao": "Voce esta no saguao de entrada do insper",
+            "opcoes": {
+                "andar professor": "tomar o elevador para o andar do professor",
+                "biblioteca": "ir para a biblioteca"
+            }
+        },
+        "andar professor": {
+            "titulo": "Andar do desespero",
+            "descricao": "Voce chegou ao andar da sala do seu professor",
+            "opcoes": {
+                "inicio": "tomar o elevador para o saguao de entrada",
+                "professor": "falar com o professor"
+            }
+        },
+        "professor": {
+            "titulo": "O monstro do Python",
+            "descricao": "Voce foi pedir para o professor adiar o EP. \n O professor revelou que é um monstro disfarçado,\n e devorou sua alma.",
+            "opcoes": {}
+        },
+        "biblioteca": {
+            "titulo": "Caverna da tranquilidade",
+            "descricao": "Voce esta na biblioteca",
+            "opcoes": {
+                "inicio": "voltar para o saguao de entrada",
+                "sala secreta": "entrar em uma passagem secreta que encontrou dentro do aquário 33"
+            }
+        },
+        "sala secreta": {
+            "titulo": "...",
+            "descricao": "Para entrar na sala secreta, acerte a senha....",
+            "opcoes": {
+                "biblioteca": "voltar para a biblioteca"
+            }
+        }
+    }
+
+
     
 def carregar_cenarios():
     cenarios = cenario
@@ -33,14 +94,30 @@ def combate():
     vidam = monstros[monstro]["vida"]
     vidap = hp
     danom = monstros[monstro]["dano"]
+    print (7*"-")
     print ("Batalha")
-    print (f "No caminho você se deparou com o {monstro}")
-    print (f "Esse monstro possui {vidam} e realiza um ataque de {danom} de dano")
-    print (f "Você pode {monstros[monstro]["opcoes"]["fugir]} ou {monstros[monstro]["opcoes"]["enfrentar"]} (para tentar correr, digite: fugir; para batalhar, digite: enfrentar)")
-    danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com a força do ataque): ") 
-
-
-
+    print (7*"-")
+    print (f"Sua vide é de {hp} HP")
+    print (30*"-")
+    print (f"Você encontrou o {monstro}")
+    print (monstros[monstro]["descricao"])
+    print (f"Além disso conta com {vidam} HP e realiza ataques de {danom} de dano")
+    escolhaf = monstros[monstro]["opcoes"]["fugir"]
+    escolhae = monstros[monstro]["opcoes"]["enfrentar"]
+    pergunta = input (f"Você quer {escolhaf} ou {escolhae} (responda com : fugir ou enfrentar): ")
+    while pergunta != "fugir" and pergunta != "enfrentar":
+        print ("responda corretamente")
+        pergunta = input (f"Você quer {escolhaf} ou {escolhae} (responda com: fugir ou enfrentar): " )
+    if pergunta == "fugir":
+        a = random.randint(0,10)
+        if a > 5:
+            print (30*"-")
+            print("Você não conseguiu fugir...")
+            danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
+        else:
+            print ("Você conseguiu fugir")
+    else:
+        danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
 def main():
     nome_cenario_atual = "inicio"
     print("Na hora do sufoco!")
