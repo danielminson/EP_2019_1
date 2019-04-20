@@ -5,7 +5,7 @@
 # - aluno B: Enrico Damiani, enricofd@al.insper.edu.br
 # - Aluno C: Giulia Castro, giuliaac@al.insper.edu.br
 
-
+#import json
 import random
 
 hp = 100
@@ -30,14 +30,14 @@ monstros = {
                             }
                     }
             }
-return monstros
+#return monstros
 
-def escolhadosmonstros(carregarmonstros):
-    x=random.randint(1, len(monstros[]))
-    monstros=monstro
+#def escolhadosmonstros(carregarmonstros):
+#    x=random.randint(1, len(monstros[]))
+#    monstros=monstro
  
-with open('Cenario.json', 'r', encoding="utf8") as f:
-    cenario=json.load(f)
+#with open('Cenario.json', 'r', encoding="utf8") as f:
+#    cenario=json.load(f)
 
     
 def carregarmonstros():
@@ -46,7 +46,7 @@ def carregarmonstros():
     for e in monstros:
         listademonstros.append(e)
     monstro = listademonstros[x]    
-    return monstro 
+    return monstro
 
 cenario = {
         "inicio": {
