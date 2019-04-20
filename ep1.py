@@ -48,6 +48,17 @@ def carregarmonstros():
     monstro = listademonstros[x]    
     return monstro
 
+#with open("descricao_inventario.json", "r", enconding= "utf8") as file:
+#    dicionario_inventario=json.load(file)
+
+#def criar_inventario():
+#    a = random.randint ( 0, len(dicionario_inventario)-1)
+#    lista_inventario = []
+#    for q in dicionario_inventario:
+#        lista_inventario.append(q)
+#    item = lista_inventario[a]   
+#    return item
+
 def carregar_cenarios():
     cenarios = cenario
     nome_cenario_atual = "inicio"
