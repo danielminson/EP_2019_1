@@ -33,9 +33,11 @@ def carregarmonstros():
                             }
                     }
             }
- #   x=random.randint(1, len(monstros[]))
-    monstros=monstro
     return monstros
+
+def escolhadosmonstros(carregarmonstros):
+    x=random.randint(1, len(monstros[]))
+    monstros=monstro
  
 with open('Cenario.json', 'r', encoding="utf8") as f:
     cenario=json.load(f)
