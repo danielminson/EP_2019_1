@@ -7,33 +7,30 @@
 
 
 import random
-import json
- 
-with open('Monstros.json', 'r', encoding="utf8") as file:
-    monstro=json.load(file)
-    
-def carregarmonstros():
-    monstros = {
-            "cristofer":{
-                    "descricao": "esse monstro possui o poder de te hipnotizar",
-                    "vida":"500", 
-                    "demage":"100",
+
+hp = 100
+
+monstros = {
+            "Pateta":{
+                    "descricao": "Esse monstro possui o poder de te hipnotizar",
+                    "vida":"50", 
+                    "dano":"5",
                     "opcoes": {
-                            "fugir":"correr para as montanhas",
-                            "enfrentar":"mostre para ele quem é que manda"
+                            "fugir":"tentar correr",
+                            "enfrentar":"mostrar para ele quem é que manda"
                             }
                         },
-            "alanmo":{
-                    "descricao": "esse monstro repete incessantemente que voce precisa prestar mais atenção na aula",
-                    "vida":"750", 
-                    "demage":"250",
+            "Pluto":{
+                    "descricao": "Esse monstro repete incessantemente que voce precisa prestar mais atenção na aula",
+                    "vida":"35", 
+                    "dano":"8",
                     "opcoes": {
-                            "fugir":"correr para as montanhas",
-                            "enfrentar":"mostre para ele quem é que manda"
+                            "fugir":" tentar correr",
+                            "enfrentar":"mostrar para ele quem é que manda"
                             }
                     }
             }
-    return monstros
+return monstros
 
 def escolhadosmonstros(carregarmonstros):
     x=random.randint(1, len(monstros[]))
@@ -41,13 +38,118 @@ def escolhadosmonstros(carregarmonstros):
  
 with open('Cenario.json', 'r', encoding="utf8") as f:
     cenario=json.load(f)
+
+    
+def carregarmonstros():
+    x = random.randint ( 0, len(monstros)-1)
+    listademonstros = []
+    for e in monstros:
+        listademonstros.append(e)
+    monstro = listademonstros[x]    
+    return monstro 
+
+cenario = {
+        "inicio": {
+            "titulo": "Saguao do perigo",
+            "descricao": "Voce esta no saguao de entrada do insper",
+            "opcoes": {
+                "andar professor": "tomar o elevador para o andar do professor",
+                "biblioteca": "ir para a biblioteca"
+            }
+        },
+        "andar professor": {
+            "titulo": "Andar do desespero",
+            "descricao": "Voce chegou ao andar da sala do seu professor",
+            "opcoes": {
+                "inicio": "tomar o elevador para o saguao de entrada",
+                "professor": "falar com o professor"
+            }
+        },
+        "professor": {
+            "titulo": "O monstro do Python",
+            "descricao": "Voce foi pedir para o professor adiar o EP. \n O professor revelou que é um monstro disfarçado,\n e devorou sua alma.",
+            "opcoes": {}
+        },
+        "biblioteca": {
+            "titulo": "Caverna da tranquilidade",
+            "descricao": "Voce esta na biblioteca",
+            "opcoes": {
+                "inicio": "voltar para o saguao de entrada",
+                "sala secreta": "entrar em uma passagem secreta que encontrou dentro do aquário 33"
+            }
+        },
+        "sala secreta": {
+            "titulo": "...",
+            "descricao": "Para entrar na sala secreta, acerte a senha....",
+            "opcoes": {
+                "biblioteca": "voltar para a biblioteca"
+            }
+        }
+    }
     
 def carregar_cenarios():
     cenarios = cenario
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
-
+def combate():
+    monstro = carregarmonstros()
+    vidam = monstros[monstro]["vida"]
+    vidap = hp
+    danom = monstros[monstro]["dano"]
+    print (7*"-")
+    print ("Batalha")
+    print (7*"-")
+    print (f"Sua vide é de {hp} HP")
+    print (30*"-")
+    print (f"Você encontrou o {monstro}")
+    print (monstros[monstro]["descricao"])
+    print (f"Além disso conta com {vidam} HP e realiza ataques de {danom} de dano")
+    escolhaf = monstros[monstro]["opcoes"]["fugir"]
+    escolhae = monstros[monstro]["opcoes"]["enfrentar"]
+    pergunta = input (f"Você quer {escolhaf} ou {escolhae} (responda com : fugir ou enfrentar): ")
+    while pergunta != "fugir" and pergunta != "enfrentar":
+        print ("responda corretamente")
+        pergunta = input (f"Você quer {escolhaf} ou {escolhae} (responda com: fugir ou enfrentar): " )
+    if pergunta == "fugir":
+        a = random.randint(0,10)
+        if a > 5:
+            print (30*"-")
+            print("Você não conseguiu fugir...")
+            #------------------------------------------------------ arrumar:
+            while vidam != 0 and vidap != 0:
+                danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
+                while danopi != "fraco" and danopi != "medio" and danopi != "forte":
+                    print ("responda corretamente")
+                    danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
+                if danopi == "fraco":
+                    p = random.randint(0,100)
+                    if p < 76:
+                        danox = int(danom)
+                        danox = danox - 2
+                        print (f"A vida do monstro é {danom} HP")       
+                        danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
+                elif danopi == "medio":
+                    p = random.randint(0,100)
+                    if p < 51:
+                        danox = int(danom)
+                        danox = danox - 5
+                        print (f"A vida do monstro é {danom} HP")
+                        danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ")                            
+                else:
+                    p = random.randint(0,100)
+                    if p < 26:
+                        danox = int(danom)
+                        danox = danox - 10
+                        print (f"A vida do monstro é {danom} HP")
+                        danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
+        #---------------------------------------------------------------                    
+        else:
+            print (30*"-")
+            print ("Você conseguiu fugir")
+    else:
+        danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
+# copiara o que esta entre ------ aqui
 def main():
     nome_cenario_atual = "inicio"
     print("Na hora do sufoco!")
@@ -67,9 +169,10 @@ def main():
         cenario_atual = cenarios[nome_cenario_atual]
         print(cenario_atual["titulo"])
         print(len(cenario_atual["titulo"])*"-")
+        print (f"Sua vida é de {hp} HP")
+        print(20 * "-")
         print(cenario_atual["descricao"])
         print()
-        #hp
         opcoes = cenario_atual['opcoes']
         if len(opcoes) == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
@@ -94,7 +197,7 @@ def main():
                     # OBS: os premios que voce ganhar aqui, voce nao podera pegar no cenário
                     break
                 elif aparicaodemonstro == True and ganharpremio == False:
-                    print('começa a batalha meu filho')
+                    x = combate()
                     break
                 elif aparicaodemonstro == False and ganharpremio == True:
                     print('você ganhou um prêmio')
