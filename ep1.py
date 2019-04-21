@@ -28,7 +28,16 @@ monstros = {
                             "fugir":" tentar correr",
                             "enfrentar":"mostrar para ele quem é que manda"
                             }
-                    }
+                    },
+            "Pato Donald":{
+                    "descricao": "Esse monstro é um pato muito pimpão",
+                    "vida":"42", 
+                    "dano":"9",
+                    "opcoes": {
+                            "fugir":"tentar correr",
+                            "enfrentar":"mostrar para ele quem é que manda"
+                            }                 
+                    },        
             }
 #return monstros
 
@@ -81,12 +90,15 @@ def combate():
     escolhae = monstros[monstro]["opcoes"]["enfrentar"]
     pergunta = input (f"Você quer {escolhaf} ou {escolhae} (responda com : fugir ou enfrentar): ")
     vidam = int(vidam)
+    danom = int(danom)
     while pergunta != "fugir" and pergunta != "enfrentar":
+        #impedir que o jogador dê uma resposta inválida
         print ("responda corretamente")
         pergunta = input (f"Você quer {escolhaf} ou {escolhae} (responda com: fugir ou enfrentar): " )
         
     if pergunta == "fugir":
         a = random.randint(0,10)
+        #sistema randomico que determina se o jogador irá conseguir fugir ou nao
         if a > 5:
             print (30*"-")
             print("Você não conseguiu fugir...")
@@ -96,28 +108,40 @@ def combate():
                 while danopi != "fraco" and danopi != "medio" and danopi != "médio" and danopi != "forte":
                     print ("responda corretamente")
                     danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
+                #sistema que determina se o dano que o jogador definiu realmente vai ser efetuado
                 if danopi == "fraco":
                     p = random.randint(0,100)
                     if p < 76:
                         #vidax = int(vidam)
-                        vidam = vidam - 2
+                        vidam = vidam - 5
                         print (f"A vida do monstro é {vidax} HP")       
-                        danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
+                        danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
+                    else:
+                        print("Nenhum dano foi dado no adversário, agora é a vez dele")
+                        vidap = vidap - danom
+                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
                 elif danopi == "medio" or danopi == "médio":
                     p = random.randint(0,100)
                     if p < 51:
                         #vidax = int(vidam)
-                        vidam = vidam - 5
+                        vidam = vidam - 10
                         print (f"A vida do monstro é {vidax} HP")
-                        danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ")                            
+                        danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ")                            
+                    else:
+                        print("Nenhum dano foi dado no adversário, agora é a vez dele")
+                        vidap = vidap - danom
+                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
                 else:
                     p = random.randint(0,100)
                     if p < 26:
                         #vidax = int(vidam)
-                        vidam = vidam - 10
+                        vidam = vidam - 20
                         print (f"A vida do monstro é {vidax} HP")
-                        danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
-        #---------------------------------------------------------------                    
+                        danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
+                    else:
+                        print("Nenhum dano foi dado no adversário, agora é a vez dele")
+                        vidap = vidap - danom
+                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
         else:
             print (30*"-")
             print ("Você conseguiu fugir")
@@ -126,13 +150,13 @@ def combate():
             danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
             while danopi != "fraco" and danopi != "medio" and danopi != "médio" and danopi != "forte":
                 print ("responda corretamente")
-                danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
+                danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
             if danopi == "fraco":
                 p = random.randint(0,100)
                 if p < 76:
-                    vidam = vidam - 2
+                    vidam = vidam - 5
                     print (f"A vida do monstro agora é {vidam} HP")       
-                    danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
+                    danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
                 else:
                     print("Nenhum dano foi dado no adversário, agora é a vez dele")
                     vidap = vidap - danom
@@ -141,10 +165,9 @@ def combate():
             elif danopi == "medio" or danopi == "médio":
                 p = random.randint(0,100)
                 if p < 51:
-                    vidam = vidam - 5
+                    vidam = vidam - 10
                     print (f"A vida do monstro agora é {vidam} HP")
-                    danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ")                            
-                    
+                    danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ")
                 else: 
                     print("Nenhum dano foi dado no adversário, agora é a vez dele")
                     vidap = vidap - danom
@@ -154,16 +177,14 @@ def combate():
                 p = random.randint(0,100)
                 if p < 26:
                 #vidax = int(vidam)
-                    vidam = vidam - 10
+                    vidam = vidam - 20
                     print (f"A vida do monstro agora é {vidam} HP")
-                    danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
-                    
+                    danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
                 else:
                     print("Nenhum dano foi dado no adversário, agora é a vez dele")
                     vidap = vidap - danom
                     print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
-                    
-# copiara o que esta entre ------ aqui
+                #---------------------------------------------------------------  
 def main():
     nome_cenario_atual = "inicio"
     print("Na hora do sufoco!")
@@ -180,6 +201,7 @@ def main():
     cenarios, nome_cenario_atual = carregar_cenarios()
     game_over = False
     while not game_over:
+        #dados que monstram a situação do jogo e do jogador.
         cenario_atual = cenarios[nome_cenario_atual]
         print(cenario_atual["titulo"])
         print(len(cenario_atual["titulo"])*"-")
@@ -192,10 +214,12 @@ def main():
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
             game_over = True
         else:
+            #escolha do cenario
             for e in opcoes:
                 opcao = opcoes[e]
                 print (f"Você pode {opcao} (para essa opção escreva: {e})")
             escolha = input ("O que você quer fazer? ")
+            #definição se os monstros e/ou premios irão existir em determinado momento.
             aparicaodemonstro = random.choice([True, False])
             ganharpremio = random.choice([True, False])
             acao = False
@@ -209,18 +233,23 @@ def main():
                     #premios - basicamente alterar hp do personagem, no inicio, mas depois queremos implementar
                     #adicionar itens no inventário, que ainda PRECISA SER FEITO.
                     # OBS: os premios que voce ganhar aqui, voce nao podera pegar no cenário
+                    
+                   # hp=hp +20  ----------------------- ARRUMAR
                     break
                 elif aparicaodemonstro == True and ganharpremio == False:
                     x = combate()
                     break
                 elif aparicaodemonstro == False and ganharpremio == True:
                     print('você ganhou um prêmio')
+                  #  hp=hp +20 ------------------------ ARRUMAR
                     break
             if escolha in opcoes:
+                #se o jogador escolher ir para a sala secreta, ele precisa acertar a senha (Disney)
+                #com menos de 10 tentativas para poder ir para qualquer uma das salas do jogo.
                 if escolha == "sala secreta":
                     x = input ("Você quer tentar a senha da sala ou voltar para a biblioteca enquanto há tempo? (para tentar a senha digite: tentar a senha; para retornar para a biblioteca digite: biblioteca): ")
                     if x == "tentar a senha":
-                        r = input("fala ai a senha meu filho: ")
+                        r = input("fala ai a senha meu filho (dica: lugar onde algum de nossos personagens habitam): ")
                         t =  0
                         while r != "Disney" and t <10:
                            t = t+1
@@ -245,7 +274,8 @@ def main():
                     nome_cenario_atual = escolha
             else:
                 #arrumar
-                print("Sua indecisão foi sua ruína!")
+                #se possivel colocar a frase abaixo para aparecer, caso contrario, relevar e deixar somente o "voce morreu"
+                #print("Sua indecisão foi sua ruína!")
                 game_over = True
     print("Você morreu!")
 
