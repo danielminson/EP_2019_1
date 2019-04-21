@@ -5,7 +5,7 @@
 # - aluno B: Enrico Damiani, enricofd@al.insper.edu.br
 # - Aluno C: Giulia Castro, giuliaac@al.insper.edu.br
 
-#import json
+import json
 import random
 
 hp = 100
@@ -36,8 +36,8 @@ monstros = {
 #    x=random.randint(1, len(monstros[]))
 #    monstros=monstro
  
-#with open('Cenario.json', 'r', encoding="utf8") as f:
-#    cenario=json.load(f)
+with open('Cenario.json', 'r', encoding="utf8") as f:
+    cenario=json.load(f)
 
     
 def carregarmonstros():
@@ -48,45 +48,17 @@ def carregarmonstros():
     monstro = listademonstros[x]    
     return monstro
 
-cenario = {
-        "inicio": {
-            "titulo": "Saguao do perigo",
-            "descricao": "Voce esta no saguao de entrada do insper",
-            "opcoes": {
-                "andar professor": "tomar o elevador para o andar do professor",
-                "biblioteca": "ir para a biblioteca"
-            }
-        },
-        "andar professor": {
-            "titulo": "Andar do desespero",
-            "descricao": "Voce chegou ao andar da sala do seu professor",
-            "opcoes": {
-                "inicio": "tomar o elevador para o saguao de entrada",
-                "professor": "falar com o professor"
-            }
-        },
-        "professor": {
-            "titulo": "O monstro do Python",
-            "descricao": "Voce foi pedir para o professor adiar o EP. \n O professor revelou que é um monstro disfarçado,\n e devorou sua alma.",
-            "opcoes": {}
-        },
-        "biblioteca": {
-            "titulo": "Caverna da tranquilidade",
-            "descricao": "Voce esta na biblioteca",
-            "opcoes": {
-                "inicio": "voltar para o saguao de entrada",
-                "sala secreta": "entrar em uma passagem secreta que encontrou dentro do aquário 33"
-            }
-        },
-        "sala secreta": {
-            "titulo": "...",
-            "descricao": "Para entrar na sala secreta, acerte a senha....",
-            "opcoes": {
-                "biblioteca": "voltar para a biblioteca"
-            }
-        }
-    }
-    
+#with open("descricao_inventario.json", "r", enconding= "utf8") as file:
+#    dicionario_inventario=json.load(file)
+
+#def criar_inventario():
+#    a = random.randint ( 0, len(dicionario_inventario)-1)
+#    lista_inventario = []
+#    for q in dicionario_inventario:
+#        lista_inventario.append(q)
+#    item = lista_inventario[a]   
+#    return item
+
 def carregar_cenarios():
     cenarios = cenario
     nome_cenario_atual = "inicio"
