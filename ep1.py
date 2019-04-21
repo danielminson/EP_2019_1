@@ -124,42 +124,102 @@ def combate():
                     print ("responda corretamente")
                     danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
                 #sistema que determina se o dano que o jogador definiu realmente vai ser efetuado
+                
                 if danopi == "fraco":
                     p = random.randint(0,100)
+                    y = random.randint(0,100)
                     if p < 76:
-                        #vidax = int(vidam)
                         vidam = vidam - 5
-                        print (f"A vida do monstro é {vidax} HP")       
-                        danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
+                        print (f"A vida do monstro agora é {vidam} HP")       
+                        print ("Vez do monstro atacar")
+                        if y < 51:
+                            vidap = vidap - danom
+                            print(f"o montro tirou {danom} de dano")
+                            print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                            print ("Sua vez")
+                            danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
+                        else:
+                            print (" Para sua sorte o monstro errou o ataque...")
+                            print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                            print ("Sua vez")
+                            danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
                     else:
-                        print("Nenhum dano foi dado no adversário, agora é a vez dele")
-                        vidap = vidap - danom
-                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                        print("Nenhum dano foi dado no monstro, agora é a vez dele")
+                        if y < 51:
+                            vidap = vidap - danom
+                            print(f"o montro tirou {danom} de dano")
+                            print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                            print ("Sua vez")
+                            danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
+                        else:
+                            print (" Para sua sorte o monstro errou o ataque...")
+                            print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                            print ("Sua vez")
+                            danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
                 elif danopi == "medio" or danopi == "médio":
                     p = random.randint(0,100)
+                    y = random.randint(0,100)
                     if p < 51:
-                        #vidax = int(vidam)
                         vidam = vidam - 10
-                        print (f"A vida do monstro é {vidax} HP")
-                        danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ")                            
+                        print (f"A vida do monstro agora é {vidam} HP")       
+                        print ("Vez do monstro atacar")
+                        if y < 51:
+                            vidap = vidap - danom
+                            print(f"o montro tirou {danom} de dano")
+                            print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                            print ("Sua vez")
+                            danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
+                        else:
+                            print (" Para sua sorte o monstro errou o ataque...")
+                            print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                            print ("Sua vez")
+                            danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
                     else:
-                        print("Nenhum dano foi dado no adversário, agora é a vez dele")
-                        vidap = vidap - danom
-                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
-                else:
+                        print("Nenhum dano foi dado no monstro, agora é a vez dele")
+                        if y < 51:
+                            vidap = vidap - danom
+                            print(f"o montro tirou {danom} de dano")
+                            print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                            print ("Sua vez")
+                            danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
+                        else:
+                            print (" Para sua sorte o monstro errou o ataque...")
+                            print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                            print ("Sua vez")
+                            danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ")
+                elif danopi == "forte":
                     p = random.randint(0,100)
+                    y = random.randint(0,100)
                     if p < 26:
-                        #vidax = int(vidam)
                         vidam = vidam - 20
-                        print (f"A vida do monstro é {vidax} HP")
-                        danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
+                        print (f"A vida do monstro agora é {vidam} HP")       
+                        print ("Vez do monstro atacar")
+                        if y < 51:
+                            vidap = vidap - danom
+                            print(f"o montro tirou {danom} de dano")
+                            print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                            print ("Sua vez")
+                            danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
+                        else:
+                            print (" Para sua sorte o monstro errou o ataque...")
+                            print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                            print ("Sua vez")
+                            danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
                     else:
-                        print("Nenhum dano foi dado no adversário, agora é a vez dele")
-                        vidap = vidap - danom
-                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
-        else:
-            print (30*"-")
-            print ("Você conseguiu fugir")
+                        print("Nenhum dano foi dado no monstro, agora é a vez dele")
+                        if y < 51:
+                            vidap = vidap - danom
+                            print(f"o montro tirou {danom} de dano")
+                            print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                            print ("Sua vez")
+                            danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
+                        else:
+                            print (" Para sua sorte o monstro errou o ataque...")
+                            print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                            print ("Sua vez")
+                            danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ")   
+        print (30*"-")
+        print ("Você conseguiu fugir")
     else:
         while vidam != 0 and vidap != 0:
             danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
@@ -168,38 +228,98 @@ def combate():
                 danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
             if danopi == "fraco":
                 p = random.randint(0,100)
+                y = random.randint(0,100)
                 if p < 76:
                     vidam = vidam - 5
                     print (f"A vida do monstro agora é {vidam} HP")       
-                    danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
+                    print ("Vez do monstro atacar")
+                    if y < 51:
+                        vidap = vidap - danom
+                        print(f"o montro tirou {danom} de dano")
+                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                        print ("Sua vez")
+                        danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
+                    else:
+                        print (" Para sua sorte o monstro errou o ataque...")
+                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                        print ("Sua vez")
+                        danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
                 else:
-                    print("Nenhum dano foi dado no adversário, agora é a vez dele")
-                    vidap = vidap - danom
-                    print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
-                    break
+                    print("Nenhum dano foi dado no monstro, agora é a vez dele")
+                    if y < 51:
+                        vidap = vidap - danom
+                        print(f"o montro tirou {danom} de dano")
+                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                        print ("Sua vez")
+                        danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
+                    else:
+                        print (" Para sua sorte o monstro errou o ataque...")
+                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                        print ("Sua vez")
+                        danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
             elif danopi == "medio" or danopi == "médio":
                 p = random.randint(0,100)
+                y = random.randint(0,100)
                 if p < 51:
                     vidam = vidam - 10
-                    print (f"A vida do monstro agora é {vidam} HP")
-                    danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ")
-                else: 
-                    print("Nenhum dano foi dado no adversário, agora é a vez dele")
-                    vidap = vidap - danom
-                    print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
-                    break
+                    print (f"A vida do monstro agora é {vidam} HP")       
+                    print ("Vez do monstro atacar")
+                    if y < 51:
+                        vidap = vidap - danom
+                        print(f"o montro tirou {danom} de dano")
+                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                        print ("Sua vez")
+                        danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
+                    else:
+                        print (" Para sua sorte o monstro errou o ataque...")
+                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                        print ("Sua vez")
+                        danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
+                else:
+                    print("Nenhum dano foi dado no monstro, agora é a vez dele")
+                    if y < 51:
+                        vidap = vidap - danom
+                        print(f"o montro tirou {danom} de dano")
+                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                        print ("Sua vez")
+                        danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
+                    else:
+                        print (" Para sua sorte o monstro errou o ataque...")
+                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                        print ("Sua vez")
+                        danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ")
             elif danopi == "forte":
                 p = random.randint(0,100)
+                y = random.randint(0,100)
                 if p < 26:
-                #vidax = int(vidam)
                     vidam = vidam - 20
-                    print (f"A vida do monstro agora é {vidam} HP")
-                    danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
+                    print (f"A vida do monstro agora é {vidam} HP")       
+                    print ("Vez do monstro atacar")
+                    if y < 51:
+                        vidap = vidap - danom
+                        print(f"o montro tirou {danom} de dano")
+                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                        print ("Sua vez")
+                        danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
+                    else:
+                        print (" Para sua sorte o monstro errou o ataque...")
+                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                        print ("Sua vez")
+                        danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
                 else:
-                    print("Nenhum dano foi dado no adversário, agora é a vez dele")
-                    vidap = vidap - danom
-                    print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
-                    break
+                    print("Nenhum dano foi dado no monstro, agora é a vez dele")
+                    if y < 51:
+                        vidap = vidap - danom
+                        print(f"o montro tirou {danom} de dano")
+                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                        print ("Sua vez")
+                        danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
+                    else:
+                        print (" Para sua sorte o monstro errou o ataque...")
+                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                        print ("Sua vez")
+                        danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ")
+            
                 #---------------------------------------------------------------  
         if vidam == 0:
             print("Você matou o monstro")
