@@ -62,18 +62,18 @@ def carregarmonstros():
     return monstro
 
 descricao_inventario= {
-            "energético":{
-                    "descricao":"Esse item aumentará seu hp em 20",
-                    "vida":"20", 
-                    "utilizar":"Seu hp aumentará 20 pontos"
+            'energético':{
+                    'descricao':"Esse item aumentará seu hp em 20",
+                    'hp':"20", 
+                    'utilizar':"Seu hp aumentará 20 pontos"
                         },
-            "provas antigas":{
-                    "descricao":"Esse item serve para ser usado contra monstros para mostrar para eles que você entende da matéria",
-                    "demage":"50",
-                    "utilizar":"Diminuirá a vida do monstro em 50", 
+            'provas antigas':{
+                    'descricao':"Esse item serve para ser usado contra monstros para mostrar para eles que você entende da matéria",
+                    'demage':"50",
+                    'utilizar':"Diminuirá a vida do monstro em 50", 
                     },
-            "chave secreta":{
-                    "descricao":"A palavra secreta é Disney! Utilize-a para ter acesso à sala secreta"
+            'chave secreta':{
+                    'descricao':"A palavra secreta é Disney! Utilize-a para ter acesso à sala secreta"
                     }
             }
 lista_inventario = []
@@ -221,7 +221,7 @@ def combate():
         print (30*"-")
         print ("Você conseguiu fugir")
     else:
-        while vidam != 0 and vidap != 0:
+        while vidam > 0 and vidap > 0:
             danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
             while danopi != "fraco" and danopi != "medio" and danopi != "médio" and danopi != "forte":
                 print ("responda corretamente")
@@ -321,9 +321,9 @@ def combate():
                         danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ")
             
                 #---------------------------------------------------------------  
-        if vidam == 0:
+        if vidam < 0:
             print("Você matou o monstro")
-        elif vidap == 0:
+        elif vidap <0:
             game_over = True
 def main():
     nome_cenario_atual = "inicio"
