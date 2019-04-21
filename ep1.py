@@ -161,7 +161,7 @@ def combate():
                     print("Nenhum dano foi dado no adversário, agora é a vez dele")
                     vidap = vidap - danom
                     print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
-                    
+                    break
             elif danopi == "medio" or danopi == "médio":
                 p = random.randint(0,100)
                 if p < 51:
@@ -172,8 +172,8 @@ def combate():
                     print("Nenhum dano foi dado no adversário, agora é a vez dele")
                     vidap = vidap - danom
                     print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
-                    
-            else:
+                    break
+            elif danopi == "forte":
                 p = random.randint(0,100)
                 if p < 26:
                 #vidax = int(vidam)
@@ -184,7 +184,12 @@ def combate():
                     print("Nenhum dano foi dado no adversário, agora é a vez dele")
                     vidap = vidap - danom
                     print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                    break
                 #---------------------------------------------------------------  
+        if vidam == 0:
+            print("Você matou o monstro")
+        elif vidap == 0:
+            game_over = True
 def main():
     nome_cenario_atual = "inicio"
     print("Na hora do sufoco!")
@@ -247,7 +252,7 @@ def main():
                 #se o jogador escolher ir para a sala secreta, ele precisa acertar a senha (Disney)
                 #com menos de 10 tentativas para poder ir para qualquer uma das salas do jogo.
                 if escolha == "sala secreta":
-                    x = input ("Você quer tentar a senha da sala ou voltar para a biblioteca enquanto há tempo? (para tentar a senha digite: tentar a senha; para retornar para a biblioteca digite: biblioteca): ")
+                    x = input ("Você quer tentar a senha da sala ou voltar para a biblioteca enquanto há tempo?\n(para tentar a senha digite: 'tentar a senha' e 'biblioteca' para retornar para a biblioteca): ")
                     if x == "tentar a senha":
                         r = input("fala ai a senha meu filho (dica: lugar onde algum de nossos personagens habitam): ")
                         t =  0
