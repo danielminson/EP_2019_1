@@ -48,6 +48,10 @@ monstros = {
 with open('Cenario.json', 'r', encoding="utf8") as f:
     cenario=json.load(f)
 
+def carregar_cenarios():
+    cenarios = cenario
+    nome_cenario_atual = "inicio"
+    return cenarios, nome_cenario_atual
     
 def carregarmonstros():
     x = random.randint ( 0, len(monstros)-1)
@@ -57,21 +61,32 @@ def carregarmonstros():
     monstro = listademonstros[x]    
     return monstro
 
-#with open("descricao_inventario.json", "r", enconding= "utf8") as file:
-#    dicionario_inventario=json.load(file)
-
-#def criar_inventario():
-#    a = random.randint ( 0, len(dicionario_inventario)-1)
-#    lista_inventario = []
-#    for q in dicionario_inventario:
-#        lista_inventario.append(q)
-#    item = lista_inventario[a]   
-#    return item
-
-def carregar_cenarios():
-    cenarios = cenario
-    nome_cenario_atual = "inicio"
-    return cenarios, nome_cenario_atual
+descricao_inventario= {
+            "energético":{
+                    "descricao":"Esse item aumentará seu hp em 20",
+                    "vida":"20", 
+                    "utilizar":"Seu hp aumentará 20 pontos"
+                        },
+            "provas antigas":{
+                    "descricao":"Esse item serve para ser usado contra monstros para mostrar para eles que você entende da matéria",
+                    "demage":"50",
+                    "utilizar":"Diminuirá a vida do monstro em 50", 
+                    },
+            "chave secreta":{
+                    "descricao":"A palavra secreta é Disney! Utilize-a para ter acesso à sala secreta"
+                    }
+            }
+lista_inventario = []
+def criar_inventario():
+    dicionario_inventario=descricao_inventario
+    a = random.randint ( 0, len(dicionario_inventario)-1)
+    lista=[]
+    for q in dicionario_inventario:
+        lista.append(q)
+    item = lista[a]
+    inventario=lista_inventario
+    inventario.append(item)
+    return item
 
 def combate():
     monstro = carregarmonstros()
@@ -103,7 +118,7 @@ def combate():
             print (30*"-")
             print("Você não conseguiu fugir...")
             #------------------------------------------------------ arrumar:
-            while vidam != 0 and vidap != 0:
+            while vidam > 0 and vidap > 0:
                 danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
                 while danopi != "fraco" and danopi != "medio" and danopi != "médio" and danopi != "forte":
                     print ("responda corretamente")
@@ -232,7 +247,12 @@ def main():
                 acao = True
             while acao == True:   
                 if aparicaodemonstro == True and ganharpremio == True:
-                    print('começa  a batalha e sim, você ganhou um prêmio')
+                    premio=criar_inventario()
+                    print("voce ganhou", premio)
+                    print("seu inventario agora é:", lista_inventario)
+                    print(descricao_inventario[premio]["descricao"])
+                    print('começa  a batalha')
+                    
                     x= combate()
                     #vida do monstro - talvez fazer uma funcao para as batalhas
                     #premios - basicamente alterar hp do personagem, no inicio, mas depois queremos implementar
@@ -245,7 +265,10 @@ def main():
                     x = combate()
                     break
                 elif aparicaodemonstro == False and ganharpremio == True:
-                    print('você ganhou um prêmio')
+                    premio=criar_inventario()
+                    print('você ganhou', premio)
+                    print("seu inventario agora é:", lista_inventario)
+                    print(descricao_inventario[premio]["descricao"])
                   #  hp=hp +20 ------------------------ ARRUMAR
                     break
             if escolha in opcoes:
