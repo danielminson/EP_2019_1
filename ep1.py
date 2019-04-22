@@ -4,15 +4,17 @@
 # - Aluno A: Daniel Minson Pucciariello, danielp6@al.insper.edu.br
 # - aluno B: Enrico Damiani, enricofd@al.insper.edu.br
 # - Aluno C: Giulia Castro, giuliaac@al.insper.edu.br
-
+hp =100
 import json
 import random
 
-hp = 100
-
-
 with open('monstros.json', 'r', encoding="utf8") as file:
     monstros=json.load(file)
+
+
+#def escolhadosmonstros(carregarmonstros):
+#    x=random.randint(1, len(monstros[]))
+#    monstros=monstro
  
 with open('Cenario.json', 'r', encoding="utf8") as f:
     cenario=json.load(f)
@@ -281,20 +283,7 @@ def main():
                     print("seu inventario agora é:", lista_inventario)
                     print(descricao_inventario[premio]["descricao"])
                     print('Você encontrou um monstro!')
-                    print('começa  a batalha')
-
-#                    utilizar=input("Antes de iniciar a batalha você deseja utilizar algum item do seu inventário?")
-#                    if utlizar!=sim or utilizar!=nao or utilizar!=não:
-#                        print("Responda corretamente com sim ou nao")
-#                        utilizar=input("Antes de iniciar a batalha você deseja utilizar algum item do seu inventário?")
-#                    elif utilizar==sim:
-#                        y=
-                    x= combate()
-                    
                     utilizar=input("Antes de iniciar a batalha você deseja utilizar algum item do seu inventário?")
-                    while utilizar!="sim" or utilizar!="nao" or utilizar!="não":
-                        print("Você não respondeu corretamente")
-                        utilizar=input("Antes de iniciar a batalha você deseja utilizar algum item do seu inventário?")
                     if utilizar=="sim":
                         y=utilizar_dicionario(lista_inventario, descricao_inventario)
                         x= combate()
@@ -317,11 +306,8 @@ def main():
                     if hp <0:
                         game_over = True
 
-                    print('começa  a batalha')
+                    print("Você encontrou um monstro")
                     utilizar=input("Antes de iniciar a batalha você deseja utilizar algum item do seu inventário?")
-                    while utilizar!="sim" or utilizar!="nao" or utilizar!="não":
-                        print("Você não respondeu corretamente")
-                        utilizar=input("Antes de iniciar a batalha você deseja utilizar algum item do seu inventário?")
                     if utilizar=="sim":
                         y=utilizar_dicionario(lista_inventario, descricao_inventario)
                         x= combate()
