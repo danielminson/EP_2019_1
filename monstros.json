@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
             "Pateta":{
                     "descricao": "Esse monstro possui o poder de te hipnotizar",
@@ -27,34 +26,3 @@
                             "enfrentar":"mostrar para ele quem é que manda"
                             }                 
                     }        
-=======
-{
-            "Pateta":{
-                    "descricao": "Esse monstro possui o poder de te hipnotizar",
-                    "vida":"50", 
-                    "dano":"5",
-                    "opcoes": {
-                            "fugir":"tentar correr",
-                            "enfrentar":"mostrar para ele quem é que manda"
-                            }
-                        },
-            "Pluto":{
-                    "descricao": "Esse monstro repete incessantemente que voce precisa prestar mais atenção na aula",
-                    "vida":"35", 
-                    "dano":"8",
-                    "opcoes": {
-                            "fugir":"tentar correr",
-                            "enfrentar":"mostrar para ele quem é que manda"
-                            }
-                    },
-            "Pato Donald":{
-                    "descricao": "Esse monstro é um pato muito pimpão",
-                    "vida":"42", 
-                    "dano":"9",
-                    "opcoes": {
-                            "fugir":"tentar correr",
-                            "enfrentar":"mostrar para ele quem é que manda"
-                            }                 
-                    }        
->>>>>>> 530c63f5db80d8158b158efccf91a9e87bf2124e
-            }
