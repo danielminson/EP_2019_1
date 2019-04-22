@@ -10,35 +10,8 @@ import random
 
 hp = 100
 
-monstros = {
-            "Pateta":{
-                    "descricao": "Esse monstro possui o poder de te hipnotizar",
-                    "vida":"50", 
-                    "dano":"5",
-                    "opcoes": {
-                            "fugir":"tentar correr",
-                            "enfrentar":"mostrar para ele quem é que manda"
-                            }
-                        },
-            "Pluto":{
-                    "descricao": "Esse monstro repete incessantemente que voce precisa prestar mais atenção na aula",
-                    "vida":"35", 
-                    "dano":"8",
-                    "opcoes": {
-                            "fugir":" tentar correr",
-                            "enfrentar":"mostrar para ele quem é que manda"
-                            }
-                    },
-            "Pato Donald":{
-                    "descricao": "Esse monstro é um pato muito pimpão",
-                    "vida":"42", 
-                    "dano":"9",
-                    "opcoes": {
-                            "fugir":"tentar correr",
-                            "enfrentar":"mostrar para ele quem é que manda"
-                            }                 
-                    },        
-            }
+with open('monstros.json', 'r', encoding="utf8") as file:
+    monstros=json.load(file)
 #return monstros
 
 #def escolhadosmonstros(carregarmonstros):
@@ -421,17 +394,20 @@ def main():
                     print("voce ganhou", premio)
                     print("seu inventario agora é:", lista_inventario)
                     print(descricao_inventario[premio]["descricao"])
-                    print('começa  a batalha')
+                    print('Você encontrou um monstro!')
                     utilizar=input("Antes de iniciar a batalha você deseja utilizar algum item do seu inventário?")
+                    while utilizar!="sim" or utilizar!="nao" or utilizar!="não":
+                        print("Você não respondeu corretamente")
+                        utilizar=input("Antes de iniciar a batalha você deseja utilizar algum item do seu inventário?")
                     if utilizar=="sim":
                         y=utilizar_dicionario(lista_inventario, descricao_inventario)
                         x= combate()
                     elif utilizar=="nao" or utlizar=="não":
                         x=combate()
+                        
                     #vida do monstro - talvez fazer uma funcao para as batalhas
                     #premios - basicamente alterar hp do personagem, no inicio, mas depois queremos implementar
                     #adicionar itens no inventário, que ainda PRECISA SER FEITO.
-                    # OBS: os premios que voce ganhar aqui, voce nao podera pegar no cenário
                     
                    # hp=hp +20  ----------------------- ARRUMAR
                    # hp = combate()
@@ -441,6 +417,9 @@ def main():
                 elif aparicaodemonstro == True and ganharpremio == False:
                     print('começa  a batalha')
                     utilizar=input("Antes de iniciar a batalha você deseja utilizar algum item do seu inventário?")
+                    while utilizar!="sim" or utilizar!="nao" or utilizar!="não":
+                        print("Você não respondeu corretamente")
+                        utilizar=input("Antes de iniciar a batalha você deseja utilizar algum item do seu inventário?")
                     if utilizar=="sim":
                         y=utilizar_dicionario(lista_inventario, descricao_inventario)
                         x= combate()
