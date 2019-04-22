@@ -13,8 +13,8 @@ hp = 100
 monstros = {
             "Pateta":{
                     "descricao": "Esse monstro possui o poder de te hipnotizar",
-                    "vida":"50", 
-                    "dano":"5",
+                    "vida":"55", 
+                    "dano":"10",
                     "opcoes": {
                             "fugir":"tentar correr",
                             "enfrentar":"mostrar para ele quem é que manda"
@@ -31,7 +31,7 @@ monstros = {
                     },
             "Pato Donald":{
                     "descricao": "Esse monstro é um pato muito pimpão",
-                    "vida":"42", 
+                    "vida":"", 
                     "dano":"9",
                     "opcoes": {
                             "fugir":"tentar correr",
@@ -123,7 +123,7 @@ def combate():
     print (7*"-")
     print ("Batalha")
     print (7*"-")
-    print (f"Sua vide é de {hp} HP")
+    print (f"Sua vida é de {hp} HP")
     print (30*"-")
     print (f"Você encontrou o {monstro}")
     print (monstros[monstro]["descricao"])
@@ -203,9 +203,10 @@ def combate():
                             danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
                     else:
                         print("Nenhum dano foi dado no monstro, agora é a vez dele")
+                        print (f"A vida do monstro agora é {vidam} HP") 
                         if y < 51:
                             vidap = vidap - danom
-                            print(f"o montro tirou {danom} de dano")
+                            print(f"o monstro tirou {danom} de dano")
                             print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
                             print ("Sua vez")
                             danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
@@ -223,7 +224,7 @@ def combate():
                         print ("Vez do monstro atacar")
                         if y < 51:
                             vidap = vidap - danom
-                            print(f"o montro tirou {danom} de dano")
+                            print(f"o monstro tirou {danom} de dano")
                             print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
                             print ("Sua vez")
                             danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
@@ -234,9 +235,10 @@ def combate():
                             danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
                     else:
                         print("Nenhum dano foi dado no monstro, agora é a vez dele")
+                        print (f"A vida do monstro agora é {vidam} HP") 
                         if y < 51:
                             vidap = vidap - danom
-                            print(f"o montro tirou {danom} de dano")
+                            print(f"o monstro tirou {danom} de dano")
                             print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
                             print ("Sua vez")
                             danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
@@ -247,6 +249,7 @@ def combate():
                             danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ")   
         print (30*"-")
         print ("Você conseguiu fugir")
+        
     else:
         while vidam > 0 and vidap > 0:
             danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
@@ -275,6 +278,7 @@ def combate():
                         #danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
                 else:
                     print("Nenhum dano foi dado no monstro, agora é a vez dele")
+                    print (f"A vida do monstro agora é {vidam} HP") 
                     if y < 51:
                         vidap = vidap - danom
                         print(f"o montro tirou {danom} de dano")
@@ -310,12 +314,13 @@ def combate():
                         #danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
                 else:
                     print("Nenhum dano foi dado no monstro, agora é a vez dele")
+                    print (f"A vida do monstro agora é {vidam} HP") 
                     if y < 51:
                         vidap = vidap - danom
                         print(f"o montro tirou {danom} de dano")
                         print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
                         print ("Sua vez")
-                        danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
+                        danopi =""
                     else:
                         print (" Para sua sorte o monstro errou o ataque...")
                         print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
@@ -344,9 +349,10 @@ def combate():
                         #danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
                 else:
                     print("Nenhum dano foi dado no monstro, agora é a vez dele")
+                    print (f"A vida do monstro agora é {vidam} HP") 
                     if y < 51:
                         vidap = vidap - danom
-                        print(f"o montro tirou {danom} de dano")
+                        print(f"o monstro tirou {danom} de dano")
                         print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
                         print ("Sua vez")
                         danopi =""
@@ -365,6 +371,7 @@ def combate():
         elif vidap <0:
             return vidap
 def main():
+    
     nome_cenario_atual = "inicio"
     print("Na hora do sufoco!")
     print("------------------")
@@ -379,6 +386,7 @@ def main():
 
     cenarios, nome_cenario_atual = carregar_cenarios()
     game_over = False
+    
     while not game_over:
         #dados que monstram a situação do jogo e do jogador.
         cenario_atual = cenarios[nome_cenario_atual]
@@ -418,21 +426,22 @@ def main():
 #                    elif utilizar==sim:
 #                        y=
                     x= combate()
+                    
                     #vida do monstro - talvez fazer uma funcao para as batalhas
                     #premios - basicamente alterar hp do personagem, no inicio, mas depois queremos implementar
                     #adicionar itens no inventário, que ainda PRECISA SER FEITO.
                     # OBS: os premios que voce ganhar aqui, voce nao podera pegar no cenário
                     
-                   # hp=hp +20  ----------------------- ARRUMAR
-                   # hp = combate()
-                    #if hp <0:
-                    #     game_over = True
+                    #hp=hp +20  ----------------------- ARRUMAR
+                    hp = combate()
+                    if hp <0:
+                         game_over = True
                     break
                 elif aparicaodemonstro == True and ganharpremio == False:
                     x = combate()
-                   # hp = combate()
-                   # if hp <0:
-                   #     game_over = True
+                    hp = combate()
+                    if hp <0:
+                        game_over = True
                     break
                 elif aparicaodemonstro == False and ganharpremio == True:
                     premio=criar_inventario()
