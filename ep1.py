@@ -45,7 +45,7 @@ descricao_inventario= {
             'pipoca':{
                     'descricao':"Coma esse item para aumentar seu hp em 30 pontos",
                     'hp':30,
-                    'utilizar':"Seu hp aumentará 50 pontos", 
+                    'utilizar':"Seu hp aumentará 30 pontos", 
             'chave secreta':{
                     'descricao':"A palavra secreta é Disney! Utilize-a para ter acesso à sala secreta"
                     }
@@ -419,7 +419,7 @@ def main():
                 elif aparicaodemonstro == True and ganharpremio == False:
 
                     x = combate()
-                    hp = combate()
+                    hp = int(combate())
                     if hp <0:
                         game_over = True
 
