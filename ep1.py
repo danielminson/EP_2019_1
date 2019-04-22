@@ -12,11 +12,6 @@ hp = 100
 
 with open('monstros.json', 'r', encoding="utf8") as file:
     monstros=json.load(file)
-#return monstros
-
-#def escolhadosmonstros(carregarmonstros):
-#    x=random.randint(1, len(monstros[]))
-#    monstros=monstro
  
 with open('Cenario.json', 'r', encoding="utf8") as f:
     cenario=json.load(f)
