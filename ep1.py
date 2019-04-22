@@ -62,21 +62,27 @@ def carregarmonstros():
     return monstro
 
 descricao_inventario= {
-            'energético':{
-                    'descricao':"Esse item aumentará seu hp em 20",
-                    'hp':"20", 
+            'sorvete do mickey':{
+                    'descricao':"Coma esse item aumentará seu hp em 20",
+                    'hp':20, 
                     'utilizar':"Seu hp aumentará 20 pontos"
                         },
-            'provas antigas':{
-                    'descricao':"Esse item serve para ser usado contra monstros para mostrar para eles que você entende da matéria",
-                    'demage':"50",
-                    'utilizar':"Diminuirá a vida do monstro em 50", 
+            'turkey leg':{
+                    'descricao':"Coma esse item para aumentar seu hp em 50 pontos",
+                    'hp':50,
+                    'utilizar':"Seu hp aumentará 50 pontos", 
                     },
+            'pipoca':{
+                    'descricao':"Coma esse item para aumentar seu hp em 30 pontos",
+                    'hp':30,
+                    'utilizar':"Seu hp aumentará 50 pontos", 
             'chave secreta':{
                     'descricao':"A palavra secreta é Disney! Utilize-a para ter acesso à sala secreta"
                     }
             }
-lista_inventario = []
+        }
+            
+lista_inventario=[]
 def criar_inventario():
     dicionario_inventario=descricao_inventario
     a = random.randint ( 0, len(dicionario_inventario)-1)
@@ -87,6 +93,27 @@ def criar_inventario():
     inventario=lista_inventario
     inventario.append(item)
     return item
+
+#def utilizar_dicionario(lista, dicionario): 
+#    pergunta=input("Qual item você deseja utilizar?")
+#    if pergunta not in lista:
+#        print("Você não possui esse item, responda corretamente")
+#        pergunta=input("Qual item você deseja utilizar?") 
+#    elif pergunta=="chave secreta":
+#        print("A chave secreta não é um item utilizavél em batalhas")
+#        if len(lista)>=0:
+#            pergunta2=input("Deseja usar outro item?")
+#            if pergunta2!=sim or pergunta2!=nao or pergunta2!=não:
+#                print("Responda corretamente")
+#                pergunta2=input("Deseja usar outro item?")
+#    else: 
+#        i=0
+#        while i<len(lista):
+#            if lista[i]==pergunta:
+#                del lista[i]
+#            else: 
+#                i+=1
+#        print(dicionario[pergunta][utilizar])
 
 def combate():
     monstro = carregarmonstros()
@@ -372,7 +399,12 @@ def main():
                     print("seu inventario agora é:", lista_inventario)
                     print(descricao_inventario[premio]["descricao"])
                     print('começa  a batalha')
-                    
+#                    utilizar=input("Antes de iniciar a batalha você deseja utilizar algum item do seu inventário?")
+#                    if utlizar!=sim or utilizar!=nao or utilizar!=não:
+#                        print("Responda corretamente com sim ou nao")
+#                        utilizar=input("Antes de iniciar a batalha você deseja utilizar algum item do seu inventário?")
+#                    elif utilizar==sim:
+#                        y=
                     x= combate()
                     #vida do monstro - talvez fazer uma funcao para as batalhas
                     #premios - basicamente alterar hp do personagem, no inicio, mas depois queremos implementar
