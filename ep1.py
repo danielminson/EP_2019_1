@@ -11,11 +11,6 @@ import random
 with open('monstros.json', 'r', encoding="utf8") as file:
     monstros=json.load(file)
 
-
-#def escolhadosmonstros(carregarmonstros):
-#    x=random.randint(1, len(monstros[]))
-#    monstros=monstro
- 
 with open('Cenario.json', 'r', encoding="utf8") as f:
     cenario=json.load(f)
 
@@ -59,17 +54,18 @@ def luta(y, vidap, danom):
         print(f"o montro tirou {danom} de dano")
         print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
         print ("Sua vez")
-        danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ") 
+        danopi = ""
     else:
         print (" Para sua sorte o monstro errou o ataque...")
         print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
         print ("Sua vez")
-        danopi = input("Você quer tentar um ataque fraco - Dano = 5 (75%), médio - Dano = 10 (50%), ou forte - Dano = 20 (25%)? (respoda com fraco, medio ou forte): ")            
+        danopi = ""    
             
 def combate():
     monstro = carregarmonstros()
     vidam = monstros[monstro]["vida"]
     vidap = int(hp)
+    saiudabatalha = False
     danom = monstros[monstro]["dano"]
     print (7*"-")
     print ("Batalha")
@@ -110,10 +106,30 @@ def combate():
                         vidam = vidam - 5
                         print (f"A vida do monstro agora é {vidam} HP")       
                         print ("Vez do monstro atacar")
-                        luta(y, vidap, danom)
+                        if y < 51:
+                            vidap = vidap - danom
+                            print(f"o montro tirou {danom} de dano")
+                            print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                            print ("Sua vez")
+                            danopi = ""
+                        else:
+                            print (" Para sua sorte o monstro errou o ataque...")
+                            print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                            print ("Sua vez")
+                            danopi = ""    
                     else:
                         print("Nenhum dano foi dado no monstro, agora é a vez dele")
-                        luta(y, vidap, danom)
+                        if y < 51:
+                            vidap = vidap - danom
+                            print(f"o montro tirou {danom} de dano")
+                            print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                            print ("Sua vez")
+                            danopi = ""
+                        else:
+                            print (" Para sua sorte o monstro errou o ataque...")
+                            print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                            print ("Sua vez")
+                            danopi = ""    
                 elif danopi == "medio" or danopi == "médio":
                     p = random.randint(0,100)
                     y = random.randint(0,100)
@@ -121,11 +137,31 @@ def combate():
                         vidam = vidam - 10
                         print (f"A vida do monstro agora é {vidam} HP")       
                         print ("Vez do monstro atacar")
-                        luta(y, vidap, danom)
+                        if y < 51:
+                            vidap = vidap - danom
+                            print(f"o montro tirou {danom} de dano")
+                            print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                            print ("Sua vez")
+                            danopi = ""
+                        else:
+                            print (" Para sua sorte o monstro errou o ataque...")
+                            print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                            print ("Sua vez")
+                            danopi = ""    
                     else:
                         print("Nenhum dano foi dado no monstro, agora é a vez dele")
                         print (f"A vida do monstro agora é {vidam} HP") 
-                        luta(y, vidap, danom)
+                        if y < 51:
+                            vidap = vidap - danom
+                            print(f"o montro tirou {danom} de dano")
+                            print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                            print ("Sua vez")
+                            danopi = ""
+                        else:
+                            print (" Para sua sorte o monstro errou o ataque...")
+                            print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                            print ("Sua vez")
+                            danopi = ""    
                 elif danopi == "forte":
                     p = random.randint(0,100)
                     y = random.randint(0,100)
@@ -133,13 +169,35 @@ def combate():
                         vidam = vidam - 20
                         print (f"A vida do monstro agora é {vidam} HP")       
                         print ("Vez do monstro atacar")
-                        luta(y, vidap, danom)
+                        if y < 51:
+                            vidap = vidap - danom
+                            print(f"o montro tirou {danom} de dano")
+                            print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                            print ("Sua vez")
+                            danopi = ""
+                        else:
+                            print (" Para sua sorte o monstro errou o ataque...")
+                            print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                            print ("Sua vez")
+                            danopi = ""    
                     else:
                         print("Nenhum dano foi dado no monstro, agora é a vez dele")
                         print (f"A vida do monstro agora é {vidam} HP") 
-                        luta(y, vidap, danom)
+                        if y < 51:
+                            vidap = vidap - danom
+                            print(f"o montro tirou {danom} de dano")
+                            print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                            print ("Sua vez")
+                            danopi = ""
+                        else:
+                            print (" Para sua sorte o monstro errou o ataque...")
+                            print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                            print ("Sua vez")
+                            danopi = ""    
         print (30*"-")
         print ("Você conseguiu fugir")
+        saiudabatalha = True
+        return saiudabatalha
         
     else:
         while vidam > 0 and vidap > 0:
@@ -154,11 +212,31 @@ def combate():
                     vidam = vidam - 5
                     print (f"A vida do monstro agora é {vidam} HP")       
                     print ("Vez do monstro atacar")
-                    luta(y, vidap, danom)
+                    if y < 51:
+                        vidap = vidap - danom
+                        print(f"o montro tirou {danom} de dano")
+                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                        print ("Sua vez")
+                        danopi = ""
+                    else:
+                        print (" Para sua sorte o monstro errou o ataque...")
+                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                        print ("Sua vez")
+                        danopi = ""    
                 else:
                     print("Nenhum dano foi dado no monstro, agora é a vez dele")
                     print (f"A vida do monstro agora é {vidam} HP") 
-                    luta(y, vidap, danom)
+                    if y < 51:
+                        vidap = vidap - danom
+                        print(f"o montro tirou {danom} de dano")
+                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                        print ("Sua vez")
+                        danopi = ""
+                    else:
+                        print (" Para sua sorte o monstro errou o ataque...")
+                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                        print ("Sua vez")
+                        danopi = ""
             elif danopi == "medio" or danopi == "médio":
                 p = random.randint(0,100)
                 y = random.randint(0,100)
@@ -166,11 +244,31 @@ def combate():
                     vidam = vidam - 10
                     print (f"A vida do monstro agora é {vidam} HP")       
                     print ("Vez do monstro atacar")
-                    luta(y, vidap, danom)
+                    if y < 51:
+                        vidap = vidap - danom
+                        print(f"o montro tirou {danom} de dano")
+                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                        print ("Sua vez")
+                        danopi = ""
+                    else:
+                        print (" Para sua sorte o monstro errou o ataque...")
+                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                        print ("Sua vez")
+                        danopi = ""
                 else:
                     print("Nenhum dano foi dado no monstro, agora é a vez dele")
                     print (f"A vida do monstro agora é {vidam} HP") 
-                    luta(y, vidap, danom)
+                    if y < 51:
+                        vidap = vidap - danom
+                        print(f"o montro tirou {danom} de dano")
+                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                        print ("Sua vez")
+                        danopi = ""
+                    else:
+                        print (" Para sua sorte o monstro errou o ataque...")
+                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                        print ("Sua vez")
+                        danopi = ""
             elif danopi == "forte":
                 p = random.randint(0,100)
                 y = random.randint(0,100)
@@ -178,18 +276,42 @@ def combate():
                     vidam = vidam - 20
                     print (f"A vida do monstro agora é {vidam} HP")       
                     print ("Vez do monstro atacar")
-                    luta(y, vidap, danom)
+                    if y < 51:
+                        vidap = vidap - danom
+                        print(f"o montro tirou {danom} de dano")
+                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                        print ("Sua vez")
+                        danopi = ""
+                    else:
+                        print (" Para sua sorte o monstro errou o ataque...")
+                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                        print ("Sua vez")
+                        danopi = ""
                 else:
                     print("Nenhum dano foi dado no monstro, agora é a vez dele")
                     print (f"A vida do monstro agora é {vidam} HP") 
-                    luta(y, vidap, danom)
+                    if y < 51:
+                        vidap = vidap - danom
+                        print(f"o montro tirou {danom} de dano")
+                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                        print ("Sua vez")
+                        danopi = ""
+                    else:
+                        print (" Para sua sorte o monstro errou o ataque...")
+                        print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
+                        print ("Sua vez")
+                        danopi = "" 
             
                 #---------------------------------------------------------------  
         if vidam < 0:
             print("Você matou o monstro")
-            return vidap
+            saiudabatalha = True
+            return saiudabatalha
+            #return vidap
         elif vidap <0:
-            return vidap
+            #return vidap
+            saiudabatalha = True
+            return saiudabatalha
         
 lista_inventario=[]
 def criar_inventario():
@@ -237,6 +359,7 @@ def utilizar_dicionario(lista, dicionario):
 def main():
     hp=100
     nome_cenario_atual = "inicio"
+    print(combate())
     print("Na hora do sufoco!")
     print("------------------")
     print()
@@ -277,13 +400,14 @@ def main():
             if aparicaodemonstro == True or ganharpremio == True:
                 acao = True
             while acao == True:   
-                if aparicaodemonstro == True and ganharpremio == True:
+                if aparicaodemonstro == True and ganharpremio == True and combate()==False:
                     premio=criar_inventario()
                     print("voce ganhou", premio)
                     print("seu inventario agora é:", lista_inventario)
                     print(descricao_inventario[premio]["descricao"])
                     print('Você encontrou um monstro!')
                     utilizar=input("Antes de iniciar a batalha você deseja utilizar algum item do seu inventário?")
+                    
                     if utilizar=="sim":
                         y=utilizar_dicionario(lista_inventario, descricao_inventario)
                         x= combate()
@@ -296,15 +420,14 @@ def main():
                     
                     #hp=hp +20  ----------------------- ARRUMAR
                     hp = combate()
-                    if hp <0:
-                         game_over = True
+                  #  if hp <0:
+                   #      game_over = True
                     break
-                elif aparicaodemonstro == True and ganharpremio == False:
-
+                elif aparicaodemonstro == True and ganharpremio == False and combate()==False:
                     x = combate()
-                    hp = combate()
-                    if hp <0:
-                        game_over = True
+                 #   hp = combate()
+                 #   if hp <0:
+                 #       game_over = True
 
                     print("Você encontrou um monstro")
                     utilizar=input("Antes de iniciar a batalha você deseja utilizar algum item do seu inventário?")
