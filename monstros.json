@@ -25,5 +25,32 @@
                             "fugir":"tentar correr",
                             "enfrentar":"mostrar para ele quem é que manda"
                             }                 
-                    }
-                    }        
+                    },
+            "Minnie":{
+                    "descricao": "Esse monstro te hipinotiza com a sua fofura",
+                    "vida":"68", 
+                    "dano":"13",
+                    "opcoes": {
+                            "fugir":"tentar correr",
+                            "enfrentar":"mostrar para ele quem é que manda"
+                            }                 
+                  }, 
+            "Stitch":{
+                    "descricao": "Esse monstro irá gosta muito de bagunçar e atrapalhar seus planos",
+                    "vida":"90", 
+                    "dano":"25",
+                    "opcoes": {
+                            "fugir":"tentar correr",
+                            "enfrentar":"mostrar para ele quem é que manda"
+                            }                 
+                  }, 
+             "Mike Wazowski":{
+                    "descricao": "Esse monstro fará muitas cócegas e fará você morrer de rir",
+                    "vida":"60", 
+                    "dano":"7",
+                    "opcoes": {
+                            "fugir":"tentar correr",
+                            "enfrentar":"mostrar para ele quem é que manda"
+                            }                 
+                  }            
+            }
