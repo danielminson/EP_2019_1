@@ -391,14 +391,15 @@ def main():
                     print("seu inventario agora é:", lista_inventario)
                     print(descricao_inventario[premio]["descricao"])
                     print('Você encontrou um monstro!')
-                    utilizar=input("Antes de iniciar a batalha você deseja utilizar algum item do seu inventário?")
-                    
-                    if utilizar=="sim":
-                        y=utilizar_dicionario(lista_inventario, descricao_inventario)
-                        x= combate()
-                    elif utilizar=="nao" or utlizar=="não":
-                        x=combate()
-
+                    if len(lista_inventario)>=0:
+                        utilizar=input("Antes de iniciar a batalha você deseja utilizar algum item do seu inventário?")
+                        if utilizar=="sim":
+                            y=utilizar_dicionario(lista_inventario, descricao_inventario)
+                            x= combate()
+                            break
+                        elif utilizar=="nao" or utlizar=="não":
+                            x=combate()
+                            break
                     #vida do monstro - talvez fazer uma funcao para as batalhas
                     #premios - basicamente alterar hp do personagem, no inicio, mas depois queremos implementar
                     #adicionar itens no inventário, que ainda PRECISA SER FEITO.
@@ -409,18 +410,19 @@ def main():
                    #      game_over = True
                     break
                 elif aparicaodemonstro == True and ganharpremio == False:
-                    x = combate()
-
                   #  hp = int(combate())
                   #  if hp <0:
                   #      game_over = True
                     print("Você encontrou um monstro")
-                    utilizar=input("Antes de iniciar a batalha você deseja utilizar algum item do seu inventário?")
-                    if utilizar=="sim":
-                        y=utilizar_dicionario(lista_inventario, descricao_inventario)
-                        x= combate()
-                    elif utilizar=="nao" or utlizar=="não":
-                        x=combate()
+                    if len(lista_inventario)>0:
+                        utilizar=input("Antes de iniciar a batalha você deseja utilizar algum item do seu inventário?")
+                        if utilizar=="sim":
+                            y=utilizar_dicionario(lista_inventario, descricao_inventario)
+                            x= combate()
+                            break
+                        elif utilizar=="nao" or utlizar=="não":
+                            x=combate()
+                            break
                    # hp = combate()
                    # if hp <0:
                    #     game_over = True
