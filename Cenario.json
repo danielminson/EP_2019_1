@@ -4,7 +4,8 @@
             "descricao": "Voce esta no saguao de entrada do insper",
             "opcoes": {
                 "andar professor": "tomar o elevador para o andar do professor",
-                "biblioteca": "ir para a biblioteca"
+                "biblioteca": "ir para a biblioteca",
+                "quarto andar": "ir para o quarto andar"
             }
         },
         "andar professor": {
@@ -12,6 +13,7 @@
             "descricao": "Voce chegou ao andar da sala do seu professor",
             "opcoes": {
                 "inicio": "tomar o elevador para o saguao de entrada",
+                "quarto andar": "tomar o elevador para o quarto andar",
                 "professor": "falar com o professor"
             }
         },
@@ -33,6 +35,22 @@
             "descricao": "Para entrar na sala secreta, acerte a senha....",
             "opcoes": {
                 "biblioteca": "voltar para a biblioteca"
+            }
+        }, 
+        "quarto andar": {
+            "titulo": "Onde o caos reina",
+            "descricao": "Voce esta no quarto andar, o andar dos engenheiros",
+            "opcoes": {
+                "inicio": "voltar para o saguao de entrada",
+                "andar professor": "tomar o elevador para o andar do professor", 
+                "laboratorio":"andar até o fim do corredor para o laboraotrio"
+            }
+        },
+         "laboratorio": {
+            "titulo": "A própria Disney",
+            "descricao": "Voce esta na sala onde os experimentos são realizados e não fazem sentido",
+            "opcoes": {
+                "quarto andar":"andar até a sala principal do andar"
             }
         }
     }
