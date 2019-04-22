@@ -8,7 +8,7 @@
 import json
 import random
 
-hp = 10
+hp = 100
 
 monstros = {
             "Pateta":{
@@ -361,8 +361,9 @@ def combate():
                 #---------------------------------------------------------------  
         if vidam < 0:
             print("Você matou o monstro")
+            return vidap
         elif vidap <0:
-            return
+            return vidap
 def main():
     nome_cenario_atual = "inicio"
     print("Na hora do sufoco!")
@@ -423,9 +424,15 @@ def main():
                     # OBS: os premios que voce ganhar aqui, voce nao podera pegar no cenário
                     
                    # hp=hp +20  ----------------------- ARRUMAR
+                   # hp = combate()
+                    #if hp <0:
+                    #     game_over = True
                     break
                 elif aparicaodemonstro == True and ganharpremio == False:
                     x = combate()
+                   # hp = combate()
+                   # if hp <0:
+                   #     game_over = True
                     break
                 elif aparicaodemonstro == False and ganharpremio == True:
                     premio=criar_inventario()
