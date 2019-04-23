@@ -339,6 +339,7 @@ def main():
     game_over = False
     
     while not game_over:
+        global hp
         #dados que monstram a situação do jogo e do jogador.
         cenario_atual = cenarios[nome_cenario_atual]
         print(cenario_atual["titulo"])
@@ -367,23 +368,26 @@ def main():
             
             while acao == True:   
                 if aparicaodemonstro == True and ganharpremio == True and saiudabatalha==False:
+                    
                     hp = hp+20
                     print("voce ganhou", premio)
                     print('Você encontrou um monstro!')
                     x= combate()
-                    
+                
                     if hp <0:
                          game_over = True
                     break
                 elif aparicaodemonstro == True and ganharpremio == False and saiudabatalha==False:
                     print("Você encontrou um monstro")
                     x= combate()
+                
                     if hp <0:
                         game_over = True
                     break
                 elif aparicaodemonstro == False and ganharpremio == True:
                     print('você ganhou', premio)
                     print("20 hps pra voce")
+                
                     hp=hp +20 
                     break
                 else:
