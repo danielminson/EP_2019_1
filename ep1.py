@@ -80,14 +80,15 @@ def combate():
         if a > 5:
             print (30*"-")
             print("Você não conseguiu fugir...")
-            #------------------------------------------------------ arrumar:
+
             while vidam > 0 and vidap > 0:
                 danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
                 while danopi != "fraco" and danopi != "medio" and danopi != "médio" and danopi != "forte":
                     print ("responda corretamente")
                     danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
-                #sistema que determina se o dano que o jogador definiu realmente vai ser efetuado (if com "p" e outro if com "y")
+                #sistema que determina se o dano que o jogador definiu realmente vai ser efetuado 
                 
+                #if com "p" e outro if com "y" para determinar se as ações serão realizadas
                 if danopi == "fraco":
                     p = random.randint(0,100)
                     y = random.randint(0,100)
@@ -196,12 +197,12 @@ def combate():
                 return saiudabatalha
             elif vidap <0:
                 game_over=True
-                
-        print (30*"-")
-        print ("Você conseguiu fugir")
-        saiudabatalha = True
-        hp=vidap
-        return saiudabatalha
+        else:        
+            print (30*"-")
+            print ("Você conseguiu fugir")
+            saiudabatalha = True
+            hp=vidap
+            return saiudabatalha
 
     else:
         while vidam > 0 and vidap > 0:
@@ -317,9 +318,7 @@ def combate():
             print("Você matou o monstro")
             saiudabatalha = True
             return saiudabatalha
-            #return vidap
         elif vidap <0:
-            #return vidap
             game_over=True
 
 def main():
