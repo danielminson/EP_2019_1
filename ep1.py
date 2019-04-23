@@ -52,6 +52,7 @@ descricao_inventario= {
 def combate():
     monstro = carregarmonstros()
     vidam = monstros[monstro]["vida"]
+    global hp
     vidap = int(hp)
     saiudabatalha = False
     danom = monstros[monstro]["dano"]
@@ -85,7 +86,7 @@ def combate():
                 while danopi != "fraco" and danopi != "medio" and danopi != "médio" and danopi != "forte":
                     print ("responda corretamente")
                     danopi = input("Você quer tentar um ataque fraco - Dano = 2 (75%), médio - Dano = 5 (50%), ou forte - Dano = 10 (25%)? (respoda com fraco, medio ou forte): ") 
-                #sistema que determina se o dano que o jogador definiu realmente vai ser efetuado
+                #sistema que determina se o dano que o jogador definiu realmente vai ser efetuado (if com "p" e outro if com "y")
                 
                 if danopi == "fraco":
                     p = random.randint(0,100)
@@ -199,7 +200,7 @@ def combate():
         print (30*"-")
         print ("Você conseguiu fugir")
         saiudabatalha = True
-      #  hp=vidap
+        hp=vidap
         return saiudabatalha
     
     #####################################
@@ -312,6 +313,7 @@ def combate():
                         print ("Sua vez")
                         danopi =""            
                 #---------------------------------------------------------------  
+            hp=vidap
         if vidam < 0:
             print("Você matou o monstro")
             saiudabatalha = True
@@ -365,7 +367,7 @@ def combate():
     #return lista_final
         
 def main():
-    hp=100
+    global hp
     nome_cenario_atual = "inicio"
     print("Na hora do sufoco!")
     print("------------------")
