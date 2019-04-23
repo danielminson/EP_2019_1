@@ -392,10 +392,8 @@ def main():
         print()
         opcoes = cenario_atual['opcoes']
         if len(opcoes) == 0:
-            print("você ganhou")
-            #fazer final aqui
-#        if cenario[nome_cenario_atual][opcoes] == 1:
-#            game_over = True
+            print("você Borrrreeeuuu")
+            game_over = True
         else:
             #escolha do cenario
             for e in opcoes:

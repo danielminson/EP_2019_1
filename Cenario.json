@@ -1,4 +1,4 @@
-{
+﻿{
         "inicio": {
             "titulo": "Saguao do perigo",
             "descricao": "Voce esta no saguao de entrada do insper",
@@ -19,10 +19,23 @@
         },
         "professor": {
             "titulo": "O monstro do Python",
-            "descricao": "Voce foi pedir para o professor adiar o EP. \n O professor revelou que é um monstro disfarçado,\n e esta tentando devorar sua alma.",
+            "descricao": "Voce foi pedir para o professor adiar o EP. O professor olha com uma cara ameaçadora...",
+            "opcoes": {
+    	   	 "luta": "argumentar com o professor",
+            "tentar fugir": "Correr para o qurto andar e fingir que nada aconteceu",
+	        }
+        },
+        "tentar fugir": {
+            "titulo": "A fuga do insper",
+            "descricao": "Você esta tentando fugir do professor, entretanto percebe que ele esta correndo atrás de . Acidentalme, você tropessa e cai de cara no chão ",
             "opcoes": {}
         },
-        "biblioteca": {
+        "luta": {
+            "titulo": "A batalha do ep...",
+            "descricao": "Você decidiu argumentar com o professor, falando que o trabalhon era imenso. Ele ri de você e te da um zero. Você esta de DP, entretanto, ao menos continua vivo.",
+            "opcoes": {}
+        },
+    	"biblioteca": {
             "titulo": "Caverna da tranquilidade",
             "descricao": "Voce esta na biblioteca",
             "opcoes": {
