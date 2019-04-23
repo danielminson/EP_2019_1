@@ -8,6 +8,8 @@ global hp
 hp =100
 import json
 import random
+global game_over
+game_over = False
 
 with open('monstros.json', 'r', encoding="utf8") as file:
     monstros=json.load(file)
@@ -53,6 +55,7 @@ def combate():
     monstro = carregarmonstros()
     vidam = monstros[monstro]["vida"]
     global hp
+    global game_over
     vidap = int(hp)
     saiudabatalha = False
     danom = monstros[monstro]["dano"]
@@ -359,8 +362,14 @@ def main():
                 print (f"Você pode {opcao} (para essa opção escreva: {e})")
             escolha = input ("O que você quer fazer? ")
             #definição se os monstros e/ou premios irão existir em determinado momento.
-            aparicaodemonstro = random.choice([True, False])
-            ganharpremio = random.choice([True, False])
+            a = random.randint(0,100)
+            b = random.randint(0,100)
+            aparicaodemonstro = False
+            ganharpremio = False
+            if a < 26:
+                aparicaodemonstro = True
+            if b < 26:
+                ganharpremio = True
             acao = False
             saiudabatalha = combate()
             if aparicaodemonstro == True or ganharpremio == True:
@@ -368,9 +377,8 @@ def main():
             
             while acao == True:   
                 if aparicaodemonstro == True and ganharpremio == True and saiudabatalha==False:
-                    
+                    print("20 hps pra voce")
                     hp = hp+20
-                    print("voce ganhou", premio)
                     print('Você encontrou um monstro!')
                     x= combate()
                 
@@ -385,7 +393,6 @@ def main():
                         game_over = True
                     break
                 elif aparicaodemonstro == False and ganharpremio == True:
-                    print('você ganhou', premio)
                     print("20 hps pra voce")
                 
                     hp=hp +20 
