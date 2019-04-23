@@ -29,27 +29,6 @@ def carregarmonstros():
         listademonstros.append(e)
     monstro = listademonstros[x]    
     return monstro
-
-descricao_inventario= {
-            'sorvete do mickey':{
-                    'descricao':"Coma esse item para aumentar seu hp em 20",
-                    'hp':20, 
-                    'utilizar':"Seu hp aumentará 20 pontos"
-                        },
-            'turkey leg':{
-                    'descricao':"Coma esse item para aumentar seu hp em 50 pontos",
-                    'hp':50,
-                    'utilizar':"Seu hp aumentará 50 pontos", 
-                    },
-            'pipoca':{
-                    'descricao':"Coma esse item para aumentar seu hp em 30 pontos",
-                    'hp':30,
-                    'utilizar':"Seu hp aumentará 30 pontos", 
-            'chave secreta':{
-                    'descricao':"A palavra secreta é Disney! Utilize-a para ter acesso à sala secreta"
-                    }
-            }
-        }
             
 def combate():
     monstro = carregarmonstros()
@@ -102,7 +81,7 @@ def combate():
                             print ("Vez do monstro atacar")
                             if y < 51:
                                 vidap = vidap - danom
-                                print(f"o montro tirou {danom} de dano")
+                                print(f"o monstro tirou {danom} de dano")
                                 print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
                                 print ("Sua vez")
                                 danopi = ""
@@ -116,7 +95,7 @@ def combate():
                         print("Nenhum dano foi dado no monstro, agora é a vez dele")
                         if y < 51:
                             vidap = vidap - danom
-                            print(f"o montro tirou {danom} de dano")
+                            print(f"o monstro tirou {danom} de dano")
                             print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
                             print ("Sua vez")
                             danopi = ""
@@ -135,7 +114,7 @@ def combate():
                             print ("Vez do monstro atacar")
                             if y < 51:
                                 vidap = vidap - danom
-                                print(f"o montro tirou {danom} de dano")
+                                print(f"o monstro tirou {danom} de dano")
                                 print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
                                 print ("Sua vez")
                                 danopi = ""
@@ -150,7 +129,7 @@ def combate():
                         print (f"A vida do monstro agora é {vidam} HP") 
                         if y < 51:
                             vidap = vidap - danom
-                            print(f"o montro tirou {danom} de dano")
+                            print(f"o monstro tirou {danom} de dano")
                             print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
                             print ("Sua vez")
                             danopi = ""
@@ -170,7 +149,7 @@ def combate():
                             print ("Vez do monstro atacar")
                             if y < 51:
                                 vidap = vidap - danom
-                                print(f"o montro tirou {danom} de dano")
+                                print(f"o monstro tirou {danom} de dano")
                                 print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
                                 print ("Sua vez")
                                 danopi = ""
@@ -185,7 +164,7 @@ def combate():
                         print (f"A vida do monstro agora é {vidam} HP") 
                         if y < 51:
                             vidap = vidap - danom
-                            print(f"o montro tirou {danom} de dano")
+                            print(f"o monstro tirou {danom} de dano")
                             print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
                             print ("Sua vez")
                             danopi = ""
@@ -223,7 +202,7 @@ def combate():
                        print ("Vez do monstro atacar")
                        if y < 51:
                            vidap = vidap - danom
-                           print(f"o montro tirou {danom} de dano")
+                           print(f"o monstro tirou {danom} de dano")
                            print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
                            print ("Sua vez")
                            danopi = ""
@@ -238,7 +217,7 @@ def combate():
                     print (f"A vida do monstro agora é {vidam} HP") 
                     if y < 51:
                         vidap = vidap - danom
-                        print(f"o montro tirou {danom} de dano")
+                        print(f"o monstro tirou {danom} de dano")
                         print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
                         print ("Sua vez")
                         danopi = ""
@@ -257,7 +236,7 @@ def combate():
                         print ("Vez do monstro atacar")
                         if y < 51:
                             vidap = vidap - danom
-                            print(f"o montro tirou {danom} de dano")
+                            print(f"o monstro tirou {danom} de dano")
                             print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
                             print ("Sua vez")
                             danopi = ""
@@ -272,7 +251,7 @@ def combate():
                     print (f"A vida do monstro agora é {vidam} HP") 
                     if y < 51:
                         vidap = vidap - danom
-                        print(f"o montro tirou {danom} de dano")
+                        print(f"o monstro tirou {danom} de dano")
                         print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
                         print ("Sua vez")
                         danopi = ""
@@ -291,7 +270,7 @@ def combate():
                         print ("Vez do monstro atacar")
                         if y < 51:
                             vidap = vidap - danom
-                            print(f"o montro tirou {danom} de dano")
+                            print(f"o monstro tirou {danom} de dano")
                             print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
                             print ("Sua vez")
                             danopi = ""
@@ -306,7 +285,7 @@ def combate():
                     print (f"A vida do monstro agora é {vidam} HP") 
                     if y < 51:
                         vidap = vidap - danom
-                        print(f"o montro tirou {danom} de dano")
+                        print(f"o monstro tirou {danom} de dano")
                         print(f"Depois do ataque do monstro sua vida é de {vidap} HP")
                         print ("Sua vez")
                         danopi = ""
@@ -326,6 +305,7 @@ def combate():
 
 def main():
     global hp
+    global game_over
     nome_cenario_atual = "inicio"
     print("Na hora do sufoco!")
     print("------------------")
@@ -353,7 +333,7 @@ def main():
         print()
         opcoes = cenario_atual['opcoes']
         if len(opcoes) == 0:
-            print("você Borrrreeeuuu")
+            print("você morrrreeeuuu")
             game_over = True
         else:
             #escolha do cenario
